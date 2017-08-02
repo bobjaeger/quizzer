@@ -31,65 +31,84 @@
 
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
-
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="msapplication-tap-highlight" content="no">
-  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
   <link rel="stylesheet" type="text/css" href="css/index.css">
+
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
   <title>Quizzer</title>
 
 </head>
 
 <body>
+<!-- <img src="img/qlogo.jpg" alt="Quizzer" style="width:180px;height:180px;"> LOGO -->
 
-<!--
-<ons-page id="home-page">
-  <ons-toolbar>
-    <div class="center">
-      <img src="img/qlogo.jpg" alt="Quizzer" style="width:180px;height:180px;">
-    </div>
-    <div class="right">
-      <ons-toolbar-button>
-        <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
-      </ons-toolbar-button>
-    </div>
-  </ons-toolbar>
+<!-- navigation controller -->
+<ons-navigator id="NAV" page="menuP.html"></ons-navigator>
 
-  <p style="text-align: center">
-    <ons-button>Hi There!</ons-button>
-  </p>
-</ons-page>
--->
-
-<ons-navigator swipeable id="myNavigator" page="home-page.html"></ons-navigator>
-
-<template id="home-page.html">
-  <ons-page id="home">
-    <ons-toolbar>
-      <div class="center">Homepage</div>
-    </ons-toolbar>
+<template id="menuP.html">
+  <ons-page id="menuP">
+    <div class="pageSetup">
 
     <center>
-      <img src="img/qlogo.jpg" alt="Quizzer" style="width:180px;height:180px;">
+      <img class="logo" src="img/qlogo.jpg" alt="Quizzer" style="width:180px;height:180px;">
 
-      <p>Hi There C'mon let's play!</p>
+      <div class="welcome">
+      Welcome Player :)
+      </div>
 
-      <ons-button id="push-button">move to next page</ons-button>
+      <p> <ons-button class="home-button" id="GotoLogin">SignUp/Login</ons-button> </p>
+      <p> <ons-button class="home-button" id="GotoQuizMS">Mood Survey</ons-button> </p>
+      <p> <ons-button class="home-button" id="GotoQuizEG">Exam Grade</ons-button> </p>
+      <p> <ons-button class="home-button" id="GotoAbout">About</ons-button> </p>
     </center>
 
+  </div>
   </ons-page>
 </template>
 
-<template id="quiz-page.html">
-  <ons-page id="quiz">
-    <ons-toolbar>
-      <div class="left"><ons-back-button>Menu</ons-back-button></div>
-      <div class="center"></div>
-    </ons-toolbar>
+<template id="login.html">
+  <ons-page id="login">
+    <div class="pageSetup">
 
-    <p>Start your game here</p>
+    <ons-back-button class="backButton">Exit</ons-back-button>
 
+    </div>
+  </ons-page>
+</template>
+
+<template id="MSQuiz.html">
+  <ons-page id="MSQuiz">
+    <div class="pageSetup">
+    <!-- start content for Quiz mood survey -->
+
+    <ons-back-button class="backButton">Exit</ons-back-button>
+
+    <center>
+      <div class="questionBox" id="qtitle"></div>
+      <input id="Q1-0" type="text"></input>
+    </center>
+
+    </div>
+  </ons-page>
+</template>
+
+<template id="EGQuiz.html">
+  <ons-page id="EGQuiz">
+    <div class="pageSetup">
+
+    <ons-back-button class="backButton">Exit</ons-back-button>
+
+    </div>
+  </ons-page>
+</template>
+
+<template id="about.html">
+  <ons-page id="about">
+    <div class="pageSetup">
+
+    <ons-back-button class="backButton">Exit</ons-back-button>
+
+    </div>
   </ons-page>
 </template>
 
