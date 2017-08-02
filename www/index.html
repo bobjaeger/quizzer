@@ -23,17 +23,11 @@
 
   <meta charset="utf-8">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-
-  <script src="angular.min.js"></script>
-  <script src="onsenui.min.js"></script>
-  <script src="angular-onsenui.min.js"></script>
-
-  <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
@@ -49,27 +43,55 @@
 
 <body>
 
-<center>
-  <!-- qlogo.jpg from https://au.pinterest.com/pin/469711436116876997/ saved by pixelparty.nl -->
-  <img src="img/qlogo.jpg" alt="Quizzer" style="width:180px;height:180px;">
+<!--
+<ons-page id="home-page">
+  <ons-toolbar>
+    <div class="center">
+      <img src="img/qlogo.jpg" alt="Quizzer" style="width:180px;height:180px;">
+    </div>
+    <div class="right">
+      <ons-toolbar-button>
+        <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
 
-  <ons-page ng-controller="PersonController as person">
+  <p style="text-align: center">
+    <ons-button>Hi There!</ons-button>
+  </p>
+</ons-page>
+-->
+
+<ons-navigator swipeable id="myNavigator" page="home-page.html"></ons-navigator>
+
+<template id="home-page.html">
+  <ons-page id="home">
     <ons-toolbar>
-      <div class="center">Introduction</div>
+      <div class="center">Homepage</div>
     </ons-toolbar>
 
-    <section style="margin: 10px;">
-      <p>What is your name?</p>
-      <p>
-        <ons-input modifier="underbar" ng-model="person.name" placeholder="Your name" float></ons-input>
-      </p>
-      <p>
-        Hello, {{ person.name || 'stranger' }}!
-      </p>
-    </section>
-  </ons-page>
+    <center>
+      <img src="img/qlogo.jpg" alt="Quizzer" style="width:180px;height:180px;">
 
-</center>
+      <p>Hi There C'mon let's play!</p>
+
+      <ons-button id="push-button">move to next page</ons-button>
+    </center>
+
+  </ons-page>
+</template>
+
+<template id="quiz-page.html">
+  <ons-page id="quiz">
+    <ons-toolbar>
+      <div class="left"><ons-back-button>Menu</ons-back-button></div>
+      <div class="center"></div>
+    </ons-toolbar>
+
+    <p>Start your game here</p>
+
+  </ons-page>
+</template>
 
 </body>
 

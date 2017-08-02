@@ -17,8 +17,15 @@
  * under the License.
  */
 
- var module = angular.module('Quizzer', ['onsen']);
- module.controller('AppController', function() { });
+// NAVIGATION
+ document.addEventListener('init', function(event) {
+  var page = event.target;
 
- var app = angular.module('Quizzer', ['onsen']);
- var app = ons.bootstrap();
+  if (page.id === 'home') {
+    page.querySelector('#push-button').onclick = function() {
+      document.querySelector('#myNavigator').pushPage('quiz-page.html', {data: {title: 'Quiz'}});
+    };
+  } else if (page.id === 'quiz') {
+    page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+  }
+});
