@@ -17,62 +17,105 @@
  * under the License.
  */
 
-body {
-  height: 100%;
-  width: 100%;
-  background-color: white;
-}
-
-/* Portrait layout (default) */
-
-.app {
-  background: url(../img/logo.png) no-repeat center top;
-  /* 170px x 200px */
-  position: absolute;
-  /* position in the center of the screen */
-  left: 50%;
-  top: 50%;
-  height: 50px;
-  /* text area height */
-  width: 225px;
-  /* text area width */
-  text-align: center;
-  padding: 180px 0px 0px 0px;
-  /* image height is 200px (bottom 20px are overlapped with text) */
-  margin: -115px 0px 0px -112px;
-  /* offset vertical: half of image height and text area height */
-  /* offset horizontal: half of text area width */
-}
-
-
-/* Landscape layout (with min-width) */
-
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-  .app {
-    background-position: left center;
-    padding: 75px 0px 75px 170px;
-    /* padding-top + padding-bottom + text area = image height */
-    margin: -90px 0px 0px -198px;
-    /* offset vertical: half of image height */
-    /* offset horizontal: half of image width and text area width */
-  }
-}
-
 /*
 -----Bobby CSS Start Here-----
 */
 
-.home {
+.pageSetup {
+  background-color: #3399ff;
+  height: 100%;
+  width: 100%;
+}
 
+.logo {
+  margin: 20px 0 0 0;
+}
+
+.welcome {
+  background-color: white;
+  height: 25px;
+  width: 200px;
+  margin: 10px 0 0 0;
+  border: 5px solid lightgrey;
+  border-radius: 10px;
+}
+
+.pageTitle {
+  background-color: white;
+  height: 25px;
+  width: 200px;
+  margin: 15px 0 0 0;
+  border: 5px solid lightgrey;
+  border-radius: 10px;
 }
 
 .home-button {
-    background-color: #4CAF50;
-    border: 1px;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+  background-color: white;
+  height: 65px;
+  width: 175px;
+  border: 1px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.questionBox {
+  background-color: white;
+  height: 100px;
+  width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 15px 0 0 0;
+  position: relative;
+  border-radius: 5px;
+}
+
+.questionBoxLarge {
+  background-color: white;
+  height: 150px;
+  width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 15px 0 0 0;
+  position: relative;
+  border-radius: 5px;
+}
+
+.backButton {
+  background-color: white;
+  height: 40px;
+  width: 75px;
+  margin: 10px 0 0 10px;
+  padding: 0 4px 0 0;
+  border-radius: 20px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.text {
+  text-align: center;
+}
+
+.textHelp {
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.item {
+  width: 50%;
+  display: block;
+  margin: auto;
+  align-items: center;
+}
+
+.itemRadio {
+
+  margin: auto;
+  align-items: center;
 }

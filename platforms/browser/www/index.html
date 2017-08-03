@@ -79,15 +79,52 @@
 <template id="MSQuiz.html">
   <ons-page id="MSQuiz">
     <div class="pageSetup">
-    <!-- start content for Quiz mood survey -->
-
     <ons-back-button class="backButton">Exit</ons-back-button>
-
+    <!-- start content for Quiz mood survey ----------------------------------->
     <center>
-      <div class="questionBox" id="qtitle"></div>
-      <input id="Q1-0" type="text"></input>
-    </center>
+      <div id="Q1-0-title" class="pageTitle"></div>
+      <!-- question mood survey 1. Date -->
+        <div class="questionBox">
+          <div id="Q1-0-Question0" class="text"></div>
+          <div id="Q1-0-Help0" class="textHelp"></div>
+        <br />
+          <input id="Q1-0-date" type="text" class="item"></input>
+        </div>
 
+    <br />
+
+      <!-- question mood survey 2. Name -->
+        <div class="questionBox">
+          <div id="Q1-0-Question1" class="text"></div>
+          <div id="Q1-0-Help1" class="textHelp"></div>
+        <br />
+          <input id="Q1-0-name" type="text" size="30" class="item"></input>
+        </div>
+
+    <br />
+
+      <!-- question mood survey 3. Diary -->
+        <div class="questionBoxLarge">
+          <div id="Q1-0-Question2" class="text"></div>
+          <div id="Q1-0-Help2" class="textHelp"></div>
+        <br />
+          <textarea id="Q1-0-diary" type="textarea" class="item" rows="6" cols="100"></textarea>
+        </div>
+
+    <br />
+
+      <!-- question mood survey 4. Gender -->
+        <div class="questionBoxLarge">
+          <div id="Q1-0-Question3" class="text"></div>
+          <div id="Q1-0-Help3" class="textHelp"></div>
+        <br />
+          <input id="Q1-0-gender0" class="itemRadio" type="radio" name="gender" value="male"> Male <br />
+          <input id="Q1-0-gender1" class="itemRadio" type="radio" name="gender" value="female"> Female <br />
+          <input id="Q1-0-gender2" class="itemRadio" type="radio" name="gender" value="other"> Depends what day it is
+        </div>
+      <!-- CONTINUE HERE BOB -->
+  </center>
+  <!-- end of content for Quiz mood survey ----------------------------------->
     </div>
   </ons-page>
 </template>
@@ -95,9 +132,30 @@
 <template id="EGQuiz.html">
   <ons-page id="EGQuiz">
     <div class="pageSetup">
-
     <ons-back-button class="backButton">Exit</ons-back-button>
 
+    <!-- start content for Exam Grade survey ----------------------------------->
+      <center>
+      <!-- question mood survey 1. Date -->
+        <div class="questionBox">
+          <div id="Q1-0-Question0" class="text"></div>
+          <div id="Q1-0-Help0" class="textHelp"></div>
+        <br />
+          <input id="Q1-0-date" type="text" class="item"></input>
+        </div>
+
+    <br />
+
+      <!-- question mood survey 2. Name -->
+        <div class="questionBox">
+          <div id="Q1-0-Question1" class="text"></div>
+          <div id="Q1-0-Help1" class="textHelp"></div>
+        <br />
+          <input id="Q1-0-name" type="text" size="30" class="item"></input>
+        </div>
+
+  </center>
+  <!-- end of content for Exam Grade survey ----------------------------------->
     </div>
   </ons-page>
 </template>

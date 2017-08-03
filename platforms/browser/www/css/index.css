@@ -28,10 +28,19 @@
 }
 
 .logo {
-  margin: 50px 0 0 0;
+  margin: 20px 0 0 0;
 }
 
 .welcome {
+  background-color: white;
+  height: 25px;
+  width: 200px;
+  margin: 10px 0 0 0;
+  border: 5px solid lightgrey;
+  border-radius: 10px;
+}
+
+.pageTitle {
   background-color: white;
   height: 25px;
   width: 200px;
@@ -55,16 +64,28 @@
 
 .questionBox {
   background-color: white;
-  height: 75px;
+  height: 100px;
   width: 300px;
-  margin: 100px 0 0 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 15px 0 0 0;
+  position: relative;
+  border-radius: 5px;
+}
+
+.questionBoxLarge {
+  background-color: white;
+  height: 150px;
+  width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 15px 0 0 0;
+  position: relative;
   border-radius: 5px;
 }
 
 .backButton {
   background-color: white;
   height: 40px;
-  width: 125px;
+  width: 75px;
   margin: 10px 0 0 10px;
   padding: 0 4px 0 0;
   border-radius: 20px;
@@ -73,4 +94,28 @@
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
+}
+
+.text {
+  text-align: center;
+}
+
+.textHelp {
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.item {
+  width: 50%;
+  display: block;
+  margin: auto;
+  align-items: center;
+}
+
+.itemRadio {
+
+  margin: auto;
+  align-items: center;
 }
