@@ -22,9 +22,11 @@
 */
 
 .pageSetup {
-  background-color: #3399ff;
-  height: 100%;
-  width: 100%;
+  background-image: url(../img/bg_quizzer.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .logo {
@@ -49,12 +51,22 @@
   border-radius: 10px;
 }
 
+.pageTitleLarge {
+  background-color: white;
+  height: 40px;
+  width: 215px;
+  margin: 15px 0 0 0;
+  border: 5px solid lightgrey;
+  border-radius: 10px;
+}
+
 .home-button {
   background-color: white;
   height: 65px;
   width: 175px;
   border: 1px;
   color: black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -114,8 +126,35 @@
   align-items: center;
 }
 
+.itemTextArea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .itemRadio {
 
   margin: auto;
-  align-items: center;
+}
+
+.NextQuizButton {
+  padding: 15px 25px;
+  margin: 35px 0 0 0;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #000000;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.NextQuizButton:hover {background-color: lightgrey}
+
+.NextQuizButton:active {
+  background-color: lightgrey;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

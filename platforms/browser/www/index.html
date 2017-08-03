@@ -45,12 +45,12 @@
 <!-- navigation controller -->
 <ons-navigator id="NAV" page="menuP.html"></ons-navigator>
 
-<template id="menuP.html">
+<template id="menuP.html"> <!-- **************MENU PAGE*************** -->
   <ons-page id="menuP">
     <div class="pageSetup">
 
     <center>
-      <img class="logo" src="img/qlogo.jpg" alt="Quizzer" style="width:180px;height:180px;">
+      <img class="logo" src="img/quizzer_logo.png" alt="Quizzer" style="width:180px;height:180px;">
 
       <div class="welcome">
       Welcome Player :)
@@ -60,13 +60,15 @@
       <p> <ons-button class="home-button" id="GotoQuizMS">Mood Survey</ons-button> </p>
       <p> <ons-button class="home-button" id="GotoQuizEG">Exam Grade</ons-button> </p>
       <p> <ons-button class="home-button" id="GotoAbout">About</ons-button> </p>
+
+      <h4>QUIZZER APP™</h4>
     </center>
 
   </div>
   </ons-page>
 </template>
 
-<template id="login.html">
+<template id="login.html"> <!-- **************LOGIN PAGE*************** -->
   <ons-page id="login">
     <div class="pageSetup">
 
@@ -76,7 +78,7 @@
   </ons-page>
 </template>
 
-<template id="MSQuiz.html">
+<template id="MSQuiz.html"> <!-- **************MOOD SURVEY PAGE*************** -->
   <ons-page id="MSQuiz">
     <div class="pageSetup">
     <ons-back-button class="backButton">Exit</ons-back-button>
@@ -108,7 +110,7 @@
           <div id="Q1-0-Question2" class="text"></div>
           <div id="Q1-0-Help2" class="textHelp"></div>
         <br />
-          <textarea id="Q1-0-diary" type="textarea" class="item" rows="6" cols="100"></textarea>
+          <textarea id="Q1-0-diary" type="textarea" class="itemTextArea" rows="6" cols="35"></textarea>
         </div>
 
     <br />
@@ -118,49 +120,92 @@
           <div id="Q1-0-Question3" class="text"></div>
           <div id="Q1-0-Help3" class="textHelp"></div>
         <br />
-          <input id="Q1-0-gender0" class="itemRadio" type="radio" name="gender" value="male"> Male <br />
-          <input id="Q1-0-gender1" class="itemRadio" type="radio" name="gender" value="female"> Female <br />
-          <input id="Q1-0-gender2" class="itemRadio" type="radio" name="gender" value="other"> Depends what day it is
+        <table>
+          <tr>
+            <td> <input class="itemRadio" type="radio" name="gender" value="male"> </td>  <td id="Q1-0-genderMale"></td>
+          </tr>
+          <tr>
+            <td> <input class="itemRadio" type="radio" name="gender" value="female"> </td>  <td id="Q1-0-genderFemale"></td>
+          </tr>
+          <tr>
+            <td> <input class="itemRadio" type="radio" name="gender" value="other"> </td>  <td id="Q1-0-genderOther"></td>
+          </tr>
+        </table>
         </div>
       <!-- CONTINUE HERE BOB -->
   </center>
-  <!-- end of content for Quiz mood survey ----------------------------------->
+    <!-- end of content for Quiz mood survey ----------------------------------->
     </div>
   </ons-page>
 </template>
 
-<template id="EGQuiz.html">
+<template id="EGQuiz.html"> <!-- **************EXAM GRADE PAGE 1*************** -->
   <ons-page id="EGQuiz">
     <div class="pageSetup">
     <ons-back-button class="backButton">Exit</ons-back-button>
 
-    <!-- start content for Exam Grade survey ----------------------------------->
+    <!-- start content for Exam Grade ----------------------------------->
       <center>
-      <!-- question mood survey 1. Date -->
+        <div id="Q2-title1" class="pageTitleLarge"></div>
+
+        <!-- exam grade 1. SID -->
         <div class="questionBox">
-          <div id="Q1-0-Question0" class="text"></div>
-          <div id="Q1-0-Help0" class="textHelp"></div>
+          <div id="Q2-1-Question1" class="text"></div>
         <br />
-          <input id="Q1-0-date" type="text" class="item"></input>
+          <input id="Q2-1-SID" type="text" class="item"></input>
         </div>
 
     <br />
 
-      <!-- question mood survey 2. Name -->
+        <!-- exam grade 2. Fullname -->
         <div class="questionBox">
-          <div id="Q1-0-Question1" class="text"></div>
-          <div id="Q1-0-Help1" class="textHelp"></div>
+          <div id="Q2-1-Question2" class="text"></div>
         <br />
-          <input id="Q1-0-name" type="text" size="30" class="item"></input>
+          <input id="Q2-1-fullname" type="text" class="item"></input>
         </div>
 
+    <!-- button GotoNext Exam Grade page 2 4 question -->
+    <p> <ons-button class="NextQuizButton" id="GotoNextEG2">Next Quiz</ons-button> </p>
   </center>
-  <!-- end of content for Exam Grade survey ----------------------------------->
+  <!-- end of content for Exam Grade ------------------------------------>
     </div>
   </ons-page>
 </template>
 
-<template id="about.html">
+<template id="EGQuiz2.html"> <!-- **************EXAM GRADE PAGE 2*************** -->
+  <ons-page id="EGQuiz2">
+    <div class="pageSetup">
+    <ons-back-button class="backButton">Back</ons-back-button>
+
+    <!-- start content for Exam Grade 2 --------------------------------->
+      <center>
+        <div id="Q2-title2" class="pageTitleLarge"></div>
+
+        <!-- exam grade 3. What is the capital of Australia? -->
+        <div class="questionBox">
+          <div id="Q2-1-Question3" class="text"></div>
+        <br />
+          <input id="Q2-1-capital" type="text" class="item"></input>
+          <div id="Q2-1-point3" class="text"></div>
+        </div>
+
+    <br />
+
+        <!-- exam grade 4. What is the largest state in Australia? -->
+        <div class="questionBox">
+          <div id="Q2-1-Question4" class="text"></div>
+        <br />
+          <input id="Q2-1-state" type="text" class="item"></input>
+          <div id="Q2-1-point4" class="text"></div>
+        </div>
+
+      </center>
+  <!-- end of content for Exam Grade ------------------------------------>
+    </div>
+  </ons-page>
+</template>
+
+<template id="about.html"> <!-- **************ABOUT PAGE*************** -->
   <ons-page id="about">
     <div class="pageSetup">
 

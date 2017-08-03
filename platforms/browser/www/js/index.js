@@ -62,19 +62,19 @@ document.addEventListener('init', function(event) {
   if (page.id === 'menuP')
   {
     page.querySelector('#GotoLogin').onclick = function() {
-      document.querySelector('#NAV').pushPage('login.html', {data: {title: 'Login'}});
+      document.querySelector('#NAV').pushPage('login.html');
     };
 
     page.querySelector('#GotoQuizMS').onclick = function() {
-      document.querySelector('#NAV').pushPage('MSQuiz.html', {data: {title: 'Mood Survey'}});
+      document.querySelector('#NAV').pushPage('MSQuiz.html');
     };
 
     page.querySelector('#GotoQuizEG').onclick = function() {
-      document.querySelector('#NAV').pushPage('EGQuiz.html', {data: {title: 'Exam Grade'}});
+      document.querySelector('#NAV').pushPage('EGQuiz.html');
     };
 
     page.querySelector('#GotoAbout').onclick = function() {
-      document.querySelector('#NAV').pushPage('about.html', {data: {title: 'About'}});
+      document.querySelector('#NAV').pushPage('about.html');
     };
 
   }else if (page.id === 'login') {
@@ -83,6 +83,7 @@ document.addEventListener('init', function(event) {
   }else if (page.id === 'MSQuiz') {
     //start question extract from GameData
 
+    //quiz title
     document.getElementById("Q1-0-title").innerHTML = GameData[0].id+" - "+GameData[0].title;
 
     //question mood survey 1. Date
@@ -102,14 +103,54 @@ document.addEventListener('init', function(event) {
 
     //question mood survey 4. Gender
     document.getElementById("Q1-0-Question3").innerHTML = GameData[0].questions[3].id+". "+GameData[0].questions[3].text;
-    document.getElementById("Q1-0-Help3").innerHTML = '"hint: ' + GameData[0].questions[3].options+'"';
-    document.getElementById("Q1-0-gender").type = GameData[0].questions[3].type;
+    document.getElementById("Q1-0-genderMale").innerHTML = " "+GameData[0].questions[3].options[0];
+    document.getElementById("Q1-0-genderFemale").innerHTML = " "+GameData[0].questions[3].options[1];
+    document.getElementById("Q1-0-genderOther").innerHTML = " "+GameData[0].questions[3].options[2];
 
   }else if (page.id === 'EGQuiz') {
+    //start question extract from GameData
 
+    //page title
+    document.getElementById("Q2-title1").innerHTML = GameData[1].id+" - "+GameData[1].title+", Page 1 - "+GameData[1].questionsPerPage[0]+" Question";
+
+    //question exam grade 1. SID
+    document.getElementById("Q2-1-Question1").innerHTML = GameData[1].questions[0].id+". "+GameData[1].questions[0].text;
+    document.getElementById("Q2-1-SID").type = GameData[1].questions[0].type;
+
+    //question exam grade 2. fullname
+    document.getElementById("Q2-1-Question2").innerHTML = GameData[1].questions[1].id+". "+GameData[1].questions[1].text;
+    document.getElementById("Q2-1-Help2").innerHTML = '"hint: ' + GameData[1].questions[1].help+'"';
+    document.getElementById("Q2-1-fullname").type = GameData[1].questions[1].type;
 
   }else if (page.id === 'about') {
 
   }
 
+});
+
+document.addEventListener('init', function(event) {
+  var page = event.target;
+
+  if (page.id === 'EGQuiz') {
+    page.querySelector('#GotoNextEG2').onclick = function() {
+      document.querySelector('#NAV').pushPage('EGQuiz2.html');
+    };
+
+  }else if (page.id === 'EGQuiz2') {
+    //start question extract from GameData
+
+    //page title
+    document.getElementById("Q2-title2").innerHTML = GameData[1].id+" - "+GameData[1].title+", Page 2 - "+GameData[1].questionsPerPage[1]+" Question";
+
+    //question exam grade 3. What is the capital of Australia?
+    document.getElementById("Q2-1-Question3").innerHTML = GameData[1].questions[2].id+". "+GameData[1].questions[2].text;
+    document.getElementById("Q2-1-capital").type = GameData[1].questions[2].type;
+    document.getElementById("Q2-1-point3").innerHTML = '*score: ' + GameData[1].questions[2].weighting;
+
+    //question exam grade 4. What is the largest state in Australia?
+    document.getElementById("Q2-1-Question4").innerHTML = GameData[1].questions[3].id+". "+GameData[1].questions[3].text;
+    document.getElementById("Q2-1-state").type = GameData[1].questions[3].type;
+    document.getElementById("Q2-1-point4").innerHTML = '*score: ' + GameData[1].questions[3].weighting;
+
+  }
 });
