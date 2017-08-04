@@ -79,7 +79,6 @@ document.addEventListener('init', function(event) {
 
   }else if (page.id === 'login') {
 
-
   }else if (page.id === 'MSQuiz') {
     //start question extract from GameData
 
@@ -106,6 +105,17 @@ document.addEventListener('init', function(event) {
     document.getElementById("Q1-0-genderMale").innerHTML = " "+GameData[0].questions[3].options[0];
     document.getElementById("Q1-0-genderFemale").innerHTML = " "+GameData[0].questions[3].options[1];
     document.getElementById("Q1-0-genderOther").innerHTML = " "+GameData[0].questions[3].options[2];
+
+    //question mood survey 5. Mood
+    document.getElementById("Q1-0-Question4").innerHTML = GameData[0].questions[4].id+". "+GameData[0].questions[4].text;
+    document.getElementById("Q1-0-Options4").innerHTML = GameData[0].questions[4].options;
+    document.getElementById("Q1-0-OptionsVisuals4").innerHTML = GameData[0].questions[4].optionVisuals;
+
+    //question mood survey 6. Happiness Today
+    document.getElementById("Q1-0-Question5").innerHTML = GameData[0].questions[5].id+". "+GameData[0].questions[5].text;
+
+    //question mood survey 7. Blood Alcohol
+    document.getElementById("Q1-0-Question6").innerHTML = GameData[0].questions[6].id+". "+GameData[0].questions[6].text;
 
   }else if (page.id === 'EGQuiz') {
     //start question extract from GameData
@@ -169,7 +179,35 @@ document.addEventListener('init', function(event) {
     document.getElementById("Q2-1-stateVIC").innerHTML = " "+GameData[1].questions[5].options[6];
     document.getElementById("Q2-1-stateWA").innerHTML = " "+GameData[1].questions[5].options[7];
     document.getElementById("Q2-1-point6").innerHTML = '*score: ' + GameData[1].questions[5].weighting;
-
-
   }
 });
+
+// document.addEventListener('init', function(event) {
+//   var page = event.target;
+//
+//   if (page.id === 'login') {
+//     page.querySelector('#GotoAlreadyLogged').onclick = function() {
+//     document.querySelector('#NAV').pushPage('menuP.html');
+//     }
+//   }
+// });
+//
+// document.addEventListener('init', function(event) {
+//   var page = event.target;
+//
+//   if (page.id === 'MSQuiz') {
+//     page.querySelector('#GotoMenuFinishMS').onclick = function() {
+//     document.querySelector('#NAV').pushPage('menuP.html');
+//     }
+//   }
+// });
+//
+// document.addEventListener('init', function(event) {
+//   var page = event.target;
+//
+//   if (page.id === 'EGQuiz2') {
+//     page.querySelector('#GotoMenuFinishEG').onclick = function() {
+//     document.querySelector('#NAV').pushPage('menuP.html');
+//     }
+//   }
+// });

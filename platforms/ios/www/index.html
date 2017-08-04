@@ -56,12 +56,11 @@
       Welcome Player :)
       </div>
 
-      <p> <ons-button class="home-button" id="GotoLogin">SignUp/Login</ons-button> </p>
+      <p> <ons-button class="home-button" id="GotoLogin">Login</ons-button> </p>
       <p> <ons-button class="home-button" id="GotoQuizMS">Mood Survey</ons-button> </p>
       <p> <ons-button class="home-button" id="GotoQuizEG">Exam Grade</ons-button> </p>
-      <p> <ons-button class="home-button" id="GotoAbout">About</ons-button> </p>
+      <p> <ons-button class="home-button-bottom" id="GotoAbout">About</ons-button> </p>
 
-      <h4>QUIZZER APP™</h4>
     </center>
 
   </div>
@@ -73,6 +72,25 @@
     <div class="pageSetup">
 
     <ons-back-button class="backButton">Exit</ons-back-button>
+
+      <center>
+        <div class="pageTitleLarge"> <h5>Login Page</h5> </div>
+
+        <!-- ID & password login input -->
+        <div class="questionBoxLarge">
+          <table>
+            <tr>
+              <td> <p>Username</p> </td> <td> <input class="textboxEffect" type="text" class="item"></input> </td>
+            </tr>
+          <br />
+            <tr>
+              <td> <p>Password</p> </td> <td> <input class="textboxEffect" type="password" class="item"></input> </td>
+            </tr>
+          </table>
+        </div>
+
+    <p> <ons-back-button class="NextQuizButton">Login</ons-back-button> </p>
+  </center>
 
     </div>
   </ons-page>
@@ -90,7 +108,7 @@
           <div id="Q1-0-Question0" class="text"></div>
           <div id="Q1-0-Help0" class="textHelp"></div>
         <br />
-          <input id="Q1-0-date" type="text" class="item"></input>
+          <input class="textboxEffect" id="Q1-0-date" type="text" class="item"></input>
         </div>
 
     <br />
@@ -100,7 +118,7 @@
           <div id="Q1-0-Question1" class="text"></div>
           <div id="Q1-0-Help1" class="textHelp"></div>
         <br />
-          <input id="Q1-0-name" type="text" size="30" class="item"></input>
+          <input class="textboxEffect" id="Q1-0-name" type="text" size="30" class="item"></input>
         </div>
 
     <br />
@@ -110,7 +128,7 @@
           <div id="Q1-0-Question2" class="text"></div>
           <div id="Q1-0-Help2" class="textHelp"></div>
         <br />
-          <textarea id="Q1-0-diary" type="textarea" class="itemTextArea" rows="6" cols="35"></textarea>
+          <textarea class="textboxEffect" id="Q1-0-diary" type="textarea" class="itemTextArea" rows="5" cols="35"></textarea>
         </div>
 
     <br />
@@ -132,6 +150,37 @@
           </tr>
         </table>
         </div>
+
+    <br />
+
+          <!-- question mood survey 5. Mood -->
+            <div class="questionBoxLarge">
+              <div id="Q1-0-Question4" class="text"></div>
+            <br />
+              <div id="Q1-0-Options4" class="text"></div>
+              <input type="range" class="slide" id="moodRange" value="50">
+              <div id="Q1-0-OptionsVisuals4" class="text"></div>
+            </div>
+
+    <br />
+
+            <!-- question mood survey 6. Happiness Today -->
+            <div class="questionBoxLarge">
+              <div id="Q1-0-Question5" class="text"></div>
+            <br />
+              <input type="range" class="slide" id="happyRange" value="50">
+            </div>
+
+    <br />
+
+            <!-- question mood survey 7. Blood Alcohol -->
+            <div class="questionBoxLarge">
+              <div id="Q1-0-Question6" class="text"></div>
+            <br />
+              <input type="range" class="slide" id="BloodAlcoholRange" value="50">
+            </div>
+
+        <p> <ons-back-button class="NextQuizButton">FINISH</ons-back-button> </p>
       <!-- CONTINUE HERE BOB -->
   </center>
     <!-- end of content for Quiz mood survey ----------------------------------->
@@ -152,7 +201,7 @@
         <div class="questionBox">
           <div id="Q2-1-Question1" class="text"></div>
         <br />
-          <input id="Q2-1-SID" type="text" class="item"></input>
+          <input class="textboxEffect" id="Q2-1-SID" type="text" class="item"></input>
         </div>
 
     <br />
@@ -161,7 +210,7 @@
         <div class="questionBox">
           <div id="Q2-1-Question2" class="text"></div>
         <br />
-          <input id="Q2-1-fullname" type="text" class="item"></input>
+          <input class="textboxEffect" id="Q2-1-fullname" type="text" class="item"></input>
         </div>
 
     <!-- button GotoNext Exam Grade page 2 4 question -->
@@ -185,7 +234,7 @@
         <div class="questionBox">
           <div id="Q2-1-Question3" class="text"></div>
         <br />
-          <input id="Q2-1-capital" type="text" class="item"></input>
+          <input class="textboxEffect" id="Q2-1-capital" type="text" class="item"></input>
           <div id="Q2-1-point3" class="text"></div>
         </div>
 
@@ -195,10 +244,63 @@
         <div class="questionBox">
           <div id="Q2-1-Question4" class="text"></div>
         <br />
-          <input id="Q2-1-state" type="text" class="item"></input>
+          <input class="textboxEffect" id="Q2-1-state" type="text" class="item"></input>
           <div id="Q2-1-point4" class="text"></div>
         </div>
 
+    <br />
+
+        <!-- exam grade 5. What is the capital of Victoria? -->
+        <div class="questionBoxLarge">
+          <div id="Q2-1-Question5" class="text"></div>
+        <br />
+          <table>
+            <tr>
+              <td> <input class="itemRadio" type="radio" name="capital" value="sydney"> </td>  <td id="Q2-1-capitalSydney"></td>
+            </tr>
+            <tr>
+              <td> <input class="itemRadio" type="radio" name="capital" value="brisbane"> </td>  <td id="Q2-1-capitalBrisbane"></td>
+            </tr>
+            <tr>
+              <td> <input class="itemRadio" type="radio" name="capital" value="melbourne"> </td>  <td id="Q2-1-capitalMelbourne"></td>
+            </tr>
+          </table>
+          <div id="Q2-1-point5" class="text"></div>
+        </div>
+
+        <!-- exam grade 6. Which are the territories of Australia? -->
+        <div class="questionBoxExtraLarge">
+          <div id="Q2-1-Question6" class="text"></div>
+        <br />
+          <table>
+            <tr>
+              <td> <input class="buttonChoice" id="correct-button" type="checkbox" name="stateACT" value="ACT"> </td>  <td id="Q2-1-stateACT"></td>
+
+              <td> <input class="buttonChoice" id="false-button" type="checkbox" name="stateNSW" value="NSW"> </td>  <td id="Q2-1-stateNSW"></td>
+            </tr>
+
+            <tr>
+              <td> <input class="buttonChoice" id="correct-button" type="checkbox" name="stateNT" value="NT"> </td>  <td id="Q2-1-stateNT"></td>
+
+              <td> <input class="buttonChoice" id="false-button" type="checkbox" name="stateQLD" value="QLD"> </td>  <td id="Q2-1-stateQLD"></td>
+            </tr>
+
+            <tr>
+              <td> <input class="buttonChoice" id="false-button" type="checkbox" name="stateSA" value="SA"> </td>  <td id="Q2-1-stateSA"></td>
+
+              <td> <input class="buttonChoice" id="false-button" type="checkbox" name="stateTAS" value="TAS"> </td>  <td id="Q2-1-stateTAS"></td>
+            </tr>
+
+            <tr>
+              <td> <input class="buttonChoice" id="false-button" type="checkbox" name="stateVIC" value="VIC"> </td>  <td id="Q2-1-stateVIC"></td>
+
+              <td> <input class="buttonChoice" id="false-button" type="checkbox" name="stateWA" value="WA"> </td>  <td id="Q2-1-stateWA"></td>
+            </tr>
+          </table>
+          <div id="Q2-1-point6" class="text"></div>
+        </div>
+
+      <p> <ons-button class="NextQuizButton" id="GotoMenuFinishEG">FINISH</ons-button> </p>
       </center>
   <!-- end of content for Exam Grade ------------------------------------>
     </div>
@@ -210,6 +312,23 @@
     <div class="pageSetup">
 
     <ons-back-button class="backButton">Exit</ons-back-button>
+
+    <center>
+    <div  class="questionBoxExtraXLarge">
+
+    <img class="logo" src="img/quizzer_logo.png" alt="Quizzer" style="width:180px;height:180px;">
+
+    <p>
+      Quizzer is an app perfect for company or a group that need to review their officer or member
+      trough a question. Quizzer let people easily fill a form but feel like filling a form.</p> <br />
+    <p>
+      This app is still under maintenance so every error or bad experience can be reported to my
+      email brputra@deakin.edu.au. Let me know ;).</p> <br />
+    <p>
+      --- Quizzer App Project 1 SIT313 Mobile Computing---</p>
+
+    </div>
+    </center>
 
     </div>
   </ons-page>
