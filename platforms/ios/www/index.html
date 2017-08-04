@@ -110,7 +110,7 @@
           <div id="Q1-0-Question2" class="text"></div>
           <div id="Q1-0-Help2" class="textHelp"></div>
         <br />
-          <textarea id="Q1-0-diary" type="textarea" class="item" rows="5" cols="100"></textarea>
+          <textarea id="Q1-0-diary" type="textarea" class="itemTextArea" rows="6" cols="35"></textarea>
         </div>
 
     <br />
@@ -120,9 +120,17 @@
           <div id="Q1-0-Question3" class="text"></div>
           <div id="Q1-0-Help3" class="textHelp"></div>
         <br />
-          <input id="Q1-0-gender0" class="itemRadio" type="radio" name="gender" value="male"> Male <br />
-          <input id="Q1-0-gender1" class="itemRadio" type="radio" name="gender" value="female"> Female <br />
-          <input id="Q1-0-gender2" class="itemRadio" type="radio" name="gender" value="other"> Depends what day it is
+        <table>
+          <tr>
+            <td> <input class="itemRadio" type="radio" name="gender" value="male"> </td>  <td id="Q1-0-genderMale"></td>
+          </tr>
+          <tr>
+            <td> <input class="itemRadio" type="radio" name="gender" value="female"> </td>  <td id="Q1-0-genderFemale"></td>
+          </tr>
+          <tr>
+            <td> <input class="itemRadio" type="radio" name="gender" value="other"> </td>  <td id="Q1-0-genderOther"></td>
+          </tr>
+        </table>
         </div>
       <!-- CONTINUE HERE BOB -->
   </center>
@@ -184,12 +192,10 @@
     <br />
 
         <!-- exam grade 4. What is the largest state in Australia? -->
-        <div class="questionBoxLarge">
+        <div class="questionBox">
           <div id="Q2-1-Question4" class="text"></div>
         <br />
-          <span> <input class="itemRadio" type="radio" name="state" value="sydney"> <p id="Q2-1-answer0"> </p> </span> <br />
-          <input id="Q2-1-answer1" class="itemRadio" type="radio" name="state" value="brisbane"> <br />
-          <input id="Q2-1-answer2" class="itemRadio" type="radio" name="state" value="melbourne">
+          <input id="Q2-1-state" type="text" class="item"></input>
           <div id="Q2-1-point4" class="text"></div>
         </div>
 

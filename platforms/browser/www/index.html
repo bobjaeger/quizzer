@@ -59,9 +59,8 @@
       <p> <ons-button class="home-button" id="GotoLogin">SignUp/Login</ons-button> </p>
       <p> <ons-button class="home-button" id="GotoQuizMS">Mood Survey</ons-button> </p>
       <p> <ons-button class="home-button" id="GotoQuizEG">Exam Grade</ons-button> </p>
-      <p> <ons-button class="home-button" id="GotoAbout">About</ons-button> </p>
+      <p> <ons-button class="home-button-bottom" id="GotoAbout">About</ons-button> </p>
 
-      <h4>QUIZZER APP™</h4>
     </center>
 
   </div>
@@ -197,6 +196,58 @@
         <br />
           <input id="Q2-1-state" type="text" class="item"></input>
           <div id="Q2-1-point4" class="text"></div>
+        </div>
+
+    <br />
+
+        <!-- exam grade 5. What is the capital of Victoria? -->
+        <div class="questionBoxLarge">
+          <div id="Q2-1-Question5" class="text"></div>
+        <br />
+          <table>
+            <tr>
+              <td> <input class="itemRadio" type="radio" name="capital" value="sydney"> </td>  <td id="Q2-1-capitalSydney"></td>
+            </tr>
+            <tr>
+              <td> <input class="itemRadio" type="radio" name="capital" value="brisbane"> </td>  <td id="Q2-1-capitalBrisbane"></td>
+            </tr>
+            <tr>
+              <td> <input class="itemRadio" type="radio" name="capital" value="melbourne"> </td>  <td id="Q2-1-capitalMelbourne"></td>
+            </tr>
+          </table>
+          <div id="Q2-1-point5" class="text"></div>
+        </div>
+
+        <!-- exam grade 6. Which are the territories of Australia? -->
+        <div class="questionBoxExtraLarge">
+          <div id="Q2-1-Question6" class="text"></div>
+        <br />
+          <table>
+            <tr>
+              <td> <input class="buttonChoice" id="correct-button" type="checkbox" name="stateACT" value="ACT"> </td>  <td id="Q2-1-stateACT"></td>
+
+              <td> <input class="buttonChoice" id="false-button" type="checkbox" name="stateNSW" value="NSW"> </td>  <td id="Q2-1-stateNSW"></td>
+            </tr>
+
+            <tr>
+              <td> <input class="buttonChoice" id="correct-button" type="checkbox" name="stateNT" value="NT"> </td>  <td id="Q2-1-stateNT"></td>
+
+              <td> <input class="buttonChoice" id="false-button" type="checkbox" name="stateQLD" value="QLD"> </td>  <td id="Q2-1-stateQLD"></td>
+            </tr>
+
+            <tr>
+              <td> <input class="buttonChoice" id="false-button" type="checkbox" name="stateSA" value="SA"> </td>  <td id="Q2-1-stateSA"></td>
+
+              <td> <input class="buttonChoice" id="false-button" type="checkbox" name="stateTAS" value="TAS"> </td>  <td id="Q2-1-stateTAS"></td>
+            </tr>
+
+            <tr>
+              <td> <input class="buttonChoice" id="false-button" type="checkbox" name="stateVIC" value="VIC"> </td>  <td id="Q2-1-stateVIC"></td>
+
+              <td> <input class="buttonChoice" id="false-button" type="checkbox" name="stateWA" value="WA"> </td>  <td id="Q2-1-stateWA"></td>
+            </tr>
+          </table>
+          <div id="Q2-1-point6" class="text"></div>
         </div>
 
       </center>

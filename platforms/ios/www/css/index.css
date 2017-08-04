@@ -23,10 +23,7 @@
 
 .pageSetup {
   background-image: url(../img/bg_quizzer.png);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  
 }
 
 .logo {
@@ -126,10 +123,15 @@
   align-items: center;
 }
 
+.itemTextArea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .itemRadio {
 
   margin: auto;
-  align-items: center;
 }
 
 .NextQuizButton {

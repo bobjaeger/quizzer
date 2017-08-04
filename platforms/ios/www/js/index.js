@@ -103,8 +103,9 @@ document.addEventListener('init', function(event) {
 
     //question mood survey 4. Gender
     document.getElementById("Q1-0-Question3").innerHTML = GameData[0].questions[3].id+". "+GameData[0].questions[3].text;
-    document.getElementById("Q1-0-Help3").innerHTML = '"hint: ' + GameData[0].questions[3].options+'"';
-    document.getElementById("Q1-0-gender").type = GameData[0].questions[3].type;
+    document.getElementById("Q1-0-genderMale").innerHTML = " "+GameData[0].questions[3].options[0];
+    document.getElementById("Q1-0-genderFemale").innerHTML = " "+GameData[0].questions[3].options[1];
+    document.getElementById("Q1-0-genderOther").innerHTML = " "+GameData[0].questions[3].options[2];
 
   }else if (page.id === 'EGQuiz') {
     //start question extract from GameData
@@ -147,11 +148,8 @@ document.addEventListener('init', function(event) {
     document.getElementById("Q2-1-point3").innerHTML = '*score: ' + GameData[1].questions[2].weighting;
 
     //question exam grade 4. What is the largest state in Australia?
-    document.getElementById("Q2-1-Question4").innerHTML = GameData[1].questions[4].id+". "+GameData[1].questions[2].text;
-    var a  = " "+GameData[1].questions[4].options[0];
-    var b = document.getElementById('biji');
-    b.innerHTML += a;
-
+    document.getElementById("Q2-1-Question4").innerHTML = GameData[1].questions[3].id+". "+GameData[1].questions[3].text;
+    document.getElementById("Q2-1-state").type = GameData[1].questions[3].type;
     document.getElementById("Q2-1-point4").innerHTML = '*score: ' + GameData[1].questions[3].weighting;
 
   }

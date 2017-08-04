@@ -23,10 +23,7 @@
 
 .pageSetup {
   background-image: url(../img/bg_quizzer.png);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  height: auto;
 }
 
 .logo {
@@ -74,6 +71,21 @@
   font-size: 16px;
 }
 
+.home-button-bottom {
+  background-color: white;
+  height: 65px;
+  width: 175px;
+  margin-bottom: 200px;
+  border: 1px;
+  color: black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 .questionBox {
   background-color: white;
   height: 100px;
@@ -87,6 +99,16 @@
 .questionBoxLarge {
   background-color: white;
   height: 150px;
+  width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 15px 0 0 0;
+  position: relative;
+  border-radius: 5px;
+}
+
+.questionBoxExtraLarge {
+  background-color: white;
+  height: 200px;
   width: 300px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 15px 0 0 0;
@@ -139,7 +161,7 @@
 
 .NextQuizButton {
   padding: 15px 25px;
-  margin: 35px 0 0 0;
+  margin: 35px 0 250px 0;
   font-size: 24px;
   text-align: center;
   cursor: pointer;
@@ -157,4 +179,32 @@
   background-color: lightgrey;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+.buttonChoice {
+  display: inline-block;
+  padding: 1em 2em;
+  margin: 0.5em;
+  cursor: pointer;
+  color: #292929;
+  border-radius: 0.25em;
+  background: #efefef;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0 -3px 0 rgba(0,0,0,0.22);
+  transition: 0.3s;
+  user-select: none;
+}
+
+.buttonChoice:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0 -1px 0 rgba(0,0,0,0.22);
+  }
+
+#correct-button:checked + .buttonChoice {
+  background: #2ECC71;;
+  color: #efefef;
+}
+
+#false-button:checked + .buttonChoice {
+  background: #D91E18;
+  color: #efefef;
 }

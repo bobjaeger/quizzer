@@ -119,7 +119,6 @@ document.addEventListener('init', function(event) {
 
     //question exam grade 2. fullname
     document.getElementById("Q2-1-Question2").innerHTML = GameData[1].questions[1].id+". "+GameData[1].questions[1].text;
-    document.getElementById("Q2-1-Help2").innerHTML = '"hint: ' + GameData[1].questions[1].help+'"';
     document.getElementById("Q2-1-fullname").type = GameData[1].questions[1].type;
 
   }else if (page.id === 'about') {
@@ -151,6 +150,26 @@ document.addEventListener('init', function(event) {
     document.getElementById("Q2-1-Question4").innerHTML = GameData[1].questions[3].id+". "+GameData[1].questions[3].text;
     document.getElementById("Q2-1-state").type = GameData[1].questions[3].type;
     document.getElementById("Q2-1-point4").innerHTML = '*score: ' + GameData[1].questions[3].weighting;
+
+    //question exam grade 5. What is the capital of Victoria?
+    document.getElementById("Q2-1-Question5").innerHTML = GameData[1].questions[4].id+". "+GameData[1].questions[4].text;
+    document.getElementById("Q2-1-capitalSydney").innerHTML = " "+GameData[1].questions[4].options[0];
+    document.getElementById("Q2-1-capitalBrisbane").innerHTML = " "+GameData[1].questions[4].options[1];
+    document.getElementById("Q2-1-capitalMelbourne").innerHTML = " "+GameData[1].questions[4].options[2];
+    document.getElementById("Q2-1-point5").innerHTML = '*score: ' + GameData[1].questions[4].weighting;
+
+    //question exam grade 6. Which are the territories of Australia?
+    document.getElementById("Q2-1-Question6").innerHTML = GameData[1].questions[5].id+". "+GameData[1].questions[5].text;
+    document.getElementById("Q2-1-stateACT").innerHTML = " "+GameData[1].questions[5].options[0];
+    document.getElementById("Q2-1-stateNSW").innerHTML = " "+GameData[1].questions[5].options[1];
+    document.getElementById("Q2-1-stateNT").innerHTML = " "+GameData[1].questions[5].options[2];
+    document.getElementById("Q2-1-stateQLD").innerHTML = " "+GameData[1].questions[5].options[3];
+    document.getElementById("Q2-1-stateSA").innerHTML = " "+GameData[1].questions[5].options[4];
+    document.getElementById("Q2-1-stateTAS").innerHTML = " "+GameData[1].questions[5].options[5];
+    document.getElementById("Q2-1-stateVIC").innerHTML = " "+GameData[1].questions[5].options[6];
+    document.getElementById("Q2-1-stateWA").innerHTML = " "+GameData[1].questions[5].options[7];
+    document.getElementById("Q2-1-point6").innerHTML = '*score: ' + GameData[1].questions[5].weighting;
+
 
   }
 });
