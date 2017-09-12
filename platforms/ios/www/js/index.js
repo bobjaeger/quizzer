@@ -17,6 +17,12 @@
  * under the License.
  */
 
+ /*
+ function pageScroll() {
+     	window.scrollBy(0,50); // horizontal and vertical scroll increments
+     	scrolldelay = setTimeout('pageScroll()',100); // scrolls every 100 milliseconds
+ }*/
+
 var GameData =  [
   {
 	"id": "quiz01",
@@ -48,11 +54,13 @@ var GameData =  [
 	]
   }
 ]
-/*
-function pageScroll() {
-    	window.scrollBy(0,50); // horizontal and vertical scroll increments
-    	scrolldelay = setTimeout('pageScroll()',100); // scrolls every 100 milliseconds
-}*/
+
+// var loginData = [
+//      {"inputLogin": "Username: ", "Password: "},
+//      {"inputRegis": "Name: ","E-mail: ", "Username: ", "Password: ", "Re-type Password: "},
+//      {"hint": "your username ex: jaegermark", "password long 6-15"},
+//      {"regWarn": "username at least have 4 word", "password must be at least 6 mix word and number", "password not match", "your nickname or fullname", "please use your active email address"}
+//  ]
 
 // NAVIGATION
 document.addEventListener('init', function(event) {
@@ -76,11 +84,18 @@ document.addEventListener('init', function(event) {
     page.querySelector('#GotoAbout').onclick = function() {
       document.querySelector('#NAV').pushPage('about.html');
     };
+  }
 
-  }else if (page.id === 'login') {
+  else if (page.id === 'login')
+  {
 
-  }else if (page.id === 'MSQuiz') {
-    //start question extract from GameData
+  }
+
+  else if (page.id === 'MSQuiz')
+  {
+    page.querySelector('#BackToMenu').onclick = function() {
+      document.querySelector('#NAV').pushPage('menuP.html');
+    };
 
     //quiz title
     document.getElementById("Q1-0-title").innerHTML = GameData[0].id+" - "+GameData[0].title;
@@ -116,9 +131,13 @@ document.addEventListener('init', function(event) {
 
     //question mood survey 7. Blood Alcohol
     document.getElementById("Q1-0-Question6").innerHTML = GameData[0].questions[6].id+". "+GameData[0].questions[6].text;
+  }
 
-  }else if (page.id === 'EGQuiz') {
-    //start question extract from GameData
+  else if (page.id === 'EGQuiz')
+  {
+    page.querySelector('#NextQuizEG2').onclick = function() {
+      document.querySelector('#NAV').pushPage('EGQuiz2.html');
+    };
 
     //page title
     document.getElementById("Q2-title1").innerHTML = GameData[1].id+" - "+GameData[1].title+", Page 1 - "+GameData[1].questionsPerPage[0]+" Question";
@@ -130,27 +149,13 @@ document.addEventListener('init', function(event) {
     //question exam grade 2. fullname
     document.getElementById("Q2-1-Question2").innerHTML = GameData[1].questions[1].id+". "+GameData[1].questions[1].text;
     document.getElementById("Q2-1-fullname").type = GameData[1].questions[1].type;
-
-  }else if (page.id === 'about') {
-
   }
 
-});
-
-document.addEventListener('init', function(event) {
-  var page = event.target;
-
-  if (page.id === 'EGQuiz') {
-    page.querySelector('#GotoNextEG2').onclick = function() {
-      document.querySelector('#NAV').pushPage('EGQuiz2.html');
+  else if (page.id === 'EGQuiz2')
+  {
+    page.querySelector('#BackToMenu').onclick = function() {
+      document.querySelector('#NAV').pushPage('menuP.html');
     };
-
-  }else if (page.id === 'EGQuiz2') {
-    //start question extract from GameData
-
-    page.querySelector('#GotoMenuFinishEG').onclick = function() {
-    document.querySelector('#NAV').pushPage('menuP.html');
-    }
 
     //page title
     document.getElementById("Q2-title2").innerHTML = GameData[1].id+" - "+GameData[1].title+", Page 2 - "+GameData[1].questionsPerPage[1]+" Question";
@@ -184,34 +189,28 @@ document.addEventListener('init', function(event) {
     document.getElementById("Q2-1-stateWA").innerHTML = " "+GameData[1].questions[5].options[7];
     document.getElementById("Q2-1-point6").innerHTML = '*score: ' + GameData[1].questions[5].weighting;
   }
+
+  else if (page.id === 'about')
+  {
+
+  }
+
 });
 
-// document.addEventListener('init', function(event) {
-//   var page = event.target;
+// function GoExamGrade()
+// {
+//    console.log("bijiterbang");
+//    window.location = "EGQuiz.html";
+// }
 //
-//   if (page.id === 'login') {
-//     page.querySelector('#GotoAlreadyLogged').onclick = function() {
-//     document.querySelector('#NAV').pushPage('menuP.html');
-//     }
-//   }
-// });
+// function NextExamGrade()
+// {
+//   console.log("bijiterbang2");
+//    window.location = "EGQuiz2.html";
+// }
 //
-// document.addEventListener('init', function(event) {
-//   var page = event.target;
-//
-//   if (page.id === 'MSQuiz') {
-//     page.querySelector('#GotoMenuFinishMS').onclick = function() {
-//     document.querySelector('#NAV').pushPage('menuP.html');
-//     }
-//   }
-// });
-//
-// document.addEventListener('init', function(event) {
-//   var page = event.target;
-//
-//   if (page.id === 'EGQuiz2') {
-//     page.querySelector('#GotoMenuFinishEG').onclick = function() {
-//     document.querySelector('#NAV').pushPage('menuP.html');
-//     }
-//   }
-// });
+// function BackToMenu()
+// {
+//   console.log("bijiterbang3");
+//    window.location = "menuP.html";
+// }
