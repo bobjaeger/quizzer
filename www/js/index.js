@@ -55,27 +55,27 @@ var GameData =  [
   }
 ]
 
-var loginData = [
-  {
-    "inputLogin": [
-      {"id": 1, "Username"}, {"id": 2, "Password"}]
-  },
-
-  {
-    "inputRegis": [
-      {"id": 1, "Name"}, {"id": 2, "E-mail"}, {"id": 3, "Username"}, {"id": 4, "Password"}, {"id": 5, "Re-type Password"}]
-  },
-
-  {
-    "hint": [
-      {"id": 1, "your username ex jaegermark"}, {"id": 2, "password long 6-15"}]
-  },
-
-  {
-    "regWarn": [
-      {"id": 1, "username at least have 4 word"}, {"id": 2, "password must be at least 6 mix word and number"}, {"id": 3, "password not match"}, {"id": 4, "your nickname or fullname"}, {"id": 5, "please use your active email address"}]
-  }
- ]
+// var loginData = [
+//   {
+//     "inputLogin": [
+//       {"id": 1, "Username"}, {"id": 2, "Password"}]
+//   },
+//
+//   {
+//     "inputRegis": [
+//       {"id": 1, "Name"}, {"id": 2, "E-mail"}, {"id": 3, "Username"}, {"id": 4, "Password"}, {"id": 5, "Re-type Password"}]
+//   },
+//
+//   {
+//     "hint": [
+//       {"id": 1, "your username ex jaegermark"}, {"id": 2, "password long 6-15"}]
+//   },
+//
+//   {
+//     "regWarn": [
+//       {"id": 1, "username at least have 4 word"}, {"id": 2, "password must be at least 6 mix word and number"}, {"id": 3, "password not match"}, {"id": 4, "your nickname or fullname"}, {"id": 5, "please use your active email address"}]
+//   }
+//  ]
 
 // NAVIGATION
 document.addEventListener('init', function(event) {
@@ -211,21 +211,3 @@ document.addEventListener('init', function(event) {
   }
 
 });
-
-// function GoExamGrade()
-// {
-//    console.log("bijiterbang");
-//    window.location = "EGQuiz.html";
-// }
-//
-// function NextExamGrade()
-// {
-//   console.log("bijiterbang2");
-//    window.location = "EGQuiz2.html";
-// }
-//
-// function BackToMenu()
-// {
-//   console.log("bijiterbang3");
-//    window.location = "menuP.html";
-// }
