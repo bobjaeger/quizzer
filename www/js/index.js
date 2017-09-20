@@ -68,9 +68,57 @@ function verify(inputtype, inputvalue, displaymsg, correctmsg)
    }
    else
    {
-     document.getElementById(correctmsg).innerHTML = "<font color='green'>&#10004</font>";
-     document.getElementById(displaymsg).innerHTML = "";
-   }
+    switch(inputtype){
+
+       case "nameofuser":
+        if (inputvalue.match(/^[A-Za-z]+$/))
+        {
+          document.getElementById(correctmsg).innerHTML = "<font color='green'>&#10004</font>";
+          document.getElementById(displaymsg).innerHTML = "";
+        }
+        else{
+          document.getElementById(displaymsg).innerHTML = "*only alphabets";
+          document.getElementById(correctmsg).innerHTML = "";
+        }
+       break;
+
+       case "mailofuser":
+        if (inputvalue.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/))
+        {
+          document.getElementById(correctmsg).innerHTML = "<font color='green'>&#10004</font>";
+          document.getElementById(displaymsg).innerHTML = ""; 
+        }
+        else{
+          document.getElementById(displaymsg).innerHTML = "*please input corect email";
+          document.getElementById(correctmsg).innerHTML = "";
+        }
+       break;
+
+       case "usernameofuser":
+        if (inputvalue.match(/^[a-zA-Z0-9-]+$/))
+        {
+          document.getElementById(correctmsg).innerHTML = "<font color='green'>&#10004</font>";
+          document.getElementById(displaymsg).innerHTML = "";
+        }
+        else{
+          document.getElementById(displaymsg).innerHTML = "*alphabet and number max 12";
+          document.getElementById(correctmsg).innerHTML = "";
+        }
+       break;
+
+       case "passofuser":
+        if (inputvalue.match(/^[A-Za-z0-9'\.\-\s\,]{6,12}$/))
+        {
+          document.getElementById(correctmsg).innerHTML = "<font color='green'>&#10004</font>";
+          document.getElementById(displaymsg).innerHTML = "";
+        }
+        else{
+          document.getElementById(displaymsg).innerHTML = "*6-12 lenght";
+          document.getElementById(correctmsg).innerHTML = "";
+        }
+       break;
+    }
+  }
 }
 
 /* function to validate the user data if there no any info have been inputted and submit then
@@ -78,37 +126,53 @@ function verify(inputtype, inputvalue, displaymsg, correctmsg)
 
 // #############VALIDATE REGISTER PAGE
 
-var passREG = false;
-
 function validatereg()
 {
-  var nameofuser = document.getElementById("realname").value;
-  var mailofuser = document.getElementById("usermail").value;
-  var usernameofuser = document.getElementById("useruname").value;
-  var passofuser = document.getElementById("upass").value;
+    var passREG = true;
 
-  if (nameofuser == ""){
-    alert("don't leave name blank");
-    passREG = false;
-  }
-  else if (mailofuser == ""){
-    alert("don't leave e-mail blank");
-    passREG = false;
-  }
-  else if (usernameofuser == ""){
-    alert("don't leave username blank");
-    passREG = false;
-  }
-  else if (passofuser == ""){
-    alert("don't leave password blank");
-    passREG = false;
-  }
+    var nameofuser = document.getElementById("realname").value;
+    var mailofuser = document.getElementById("usermail").value;
+    var usernameofuser = document.getElementById("useruname").value;
+    var passofuser = document.getElementById("upass").value;
 
-  else{
-    saveuser(nameofuser, mailofuser, usernameofuser, passofuser)
-    passREG = true;
+    if (nameofuser == ""){
+      passREG = false;
+    }
+    else if (mailofuser == ""){
+      passREG = false;
+    }
+    else if (usernameofuser == ""){
+      passREG = false;
+    }
+    else if (passofuser == ""){
+      passREG = false;
+    }
+
+    else{
+
+      if($('#checkrealname').text() != ""){
+        passREG = false;
+      }
+
+      if($('#checkumail').text() != ""){
+        passREG = false;
+      }
+
+      if($('#checkuname').text() != ""){
+        passREG = false;
+      }
+
+      if($('#checkpass').text() != ""){
+        passREG = false;
+      }
+
+      if(passREG == true){
+        reguser(nameofuser, mailofuser, usernameofuser, passofuser)
+
+        document.querySelector('#NAV').popPage(register.html);
+      }
+    }
   }
-}
 
 /* function to validate the user data if there no any info have been inputted and submit then
     it will alert user too fill the blank space*/
@@ -117,8 +181,7 @@ function validatereg()
 
 var passLOG = false;
 
-function validatelog()
-{
+function validatelog(){
   var usernamelog = document.getElementById("ulogin").value;
   var passlog = document.getElementById("ulogpass").value;
 
@@ -136,13 +199,42 @@ function validatelog()
   }
 }
 
-function saveuser(nameofuser, mailofuser, usernameofuser, passofuser) {
+// register user and save all the data to cloud
+function reguser(nameofuser, mailofuser, usernameofuser, passofuser) {
   var link = "http://introtoapps.com/datastore.php?action=save&appid=215339949&objectid=";
-  var linkname = nameofuser;
-  var linkcombine = link + linkname + "&data=" + "name:" + nameofuser + ", " + "email:" + mailofuser + ", " + "username:" + usernameofuser + ", " + "password:" + passofuser;
-  //console.log(linkcombine);
-  $.post(linkcombine, function (data, status){alert("Successfuly registered!");
+  var linkname = usernameofuser;
+  var linkcombine = link + linkname + "&data=" + "name:" + nameofuser + "," + "email:" + mailofuser + "," + "username:" + usernameofuser + "," + "password:" + passofuser;
+  $.get(linkcombine, function (data, status){alert("Successfuly registered!");
 });
+}
+
+// login user and retrieve quiz data per user
+function loguser(usernameofuser, passofuser) {
+  var link = "http://introtoapps.com/datastore.php?action=load&appid=215339949&objectid=";
+  var linkname = usernameofuser;
+  var linkcombine = link + linkname;
+  $.get(linkcombine, function (data, status){alert(data)
+
+  var retrievedData = data;
+  var keywords = retrievedData.split(',');
+
+  keywords.forEach(function(entry){
+    keywords = entry.split(':');
+
+    if(keywords[0] == "password"){
+      alert('password');
+      console.log(keywords[1] + ", " + passofuser);
+
+      if(keywords[1] == passofuser){
+        alert('success');
+      }
+      else{
+        alert('fails');
+      }
+    }
+    console.log(keywords);
+    });
+  });
 }
 
 // NAVIGATION
@@ -177,9 +269,9 @@ document.addEventListener('init', function(event) {
   {
     page.querySelector('#BackToMenu').onclick = function() {
       validatereg();
-      if(passREG != false){
-        document.querySelector('#NAV').popPage(register.html);
-      }
+      // if(passREG != false){
+      //   document.querySelector('#NAV').popPage(register.html);
+      // }
     };
   }
 
@@ -188,6 +280,8 @@ document.addEventListener('init', function(event) {
     page.querySelector('#BackToMenu').onclick = function() {
       validatelog();
       if(passLOG != false){
+
+        loguser($('#ulogin').val(), $('#ulogpass').val());
         document.querySelector('#NAV').popPage(login.html);
       }
     };
