@@ -55,27 +55,38 @@ var GameData =  [
   }
 ]
 
-// var loginData = [
-//   {
-//     "inputLogin": [
-//       {"id": 1, "Username"}, {"id": 2, "Password"}]
-//   },
-//
-//   {
-//     "inputRegis": [
-//       {"id": 1, "Name"}, {"id": 2, "E-mail"}, {"id": 3, "Username"}, {"id": 4, "Password"}, {"id": 5, "Re-type Password"}]
-//   },
-//
-//   {
-//     "hint": [
-//       {"id": 1, "your username ex jaegermark"}, {"id": 2, "password long 6-15"}]
-//   },
-//
-//   {
-//     "regWarn": [
-//       {"id": 1, "username at least have 4 word"}, {"id": 2, "password must be at least 6 mix word and number"}, {"id": 3, "password not match"}, {"id": 4, "your nickname or fullname"}, {"id": 5, "please use your active email address"}]
-//   }
-//  ]
+function verify(inputtype, inputvalue, displaymsg, correctmsg)
+{
+  console.log(inputtype, inputvalue, displaymsg);
+
+  if (inputvalue.length == 0)
+   {
+     document.getElementById(displaymsg).innerHTML="*must be filled";
+     document.getElementById(correctmsg).innerHTML= "";
+   }
+   else
+   {
+     document.getElementById(correctmsg).innerHTML = "<font color='green'>&#10004</font>";
+     document.getElementById(displaymsg).innerHTML = "";
+   }
+}
+
+var pass = false;
+
+function validatereg()
+{
+
+  var nameofuser = document.getElementById("realname");
+  console.log(nameofuser);
+
+  if (nameofuser.value == ""){
+    alert("don't leave name blank");
+    pass = false;
+  }
+  else{
+    pass = true;
+  }
+}
 
 // NAVIGATION
 document.addEventListener('init', function(event) {
@@ -84,6 +95,10 @@ document.addEventListener('init', function(event) {
 
   if (page.id === 'menuP')
   {
+    page.querySelector('#GotoRegis').onclick = function() {
+      document.querySelector('#NAV').pushPage('register.html');
+    };
+
     page.querySelector('#GotoLogin').onclick = function() {
       document.querySelector('#NAV').pushPage('login.html');
     };
@@ -101,9 +116,22 @@ document.addEventListener('init', function(event) {
     };
   }
 
+  else if (page.id === 'register')
+  {
+    page.querySelector('#BackToMenu').onclick = function() {
+      validatereg();
+      if(pass != false){
+        document.querySelector('#NAV').popPage(register.html);
+      }
+    };
+  }
+
   else if (page.id === 'login')
   {
 
+    page.querySelector('#BackToMenu').onclick = function() {
+      document.querySelector('#NAV').pushPage('menuP.html');
+    };
   }
 
   else if (page.id === 'MSQuiz')

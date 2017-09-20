@@ -53,12 +53,22 @@
       <img class="logo" src="img/quizzer_logo.png" alt="Quizzer" style="width:180px;height:180px;">
 
       <div class="welcome">
-      Welcome Player :)
+      Welcome Guest :)
       </div>
 
-      <!-- <p> <ons-button class="home-button" id="GotoLogin">Login</ons-button> </p> -->
-
       <table class="menuTable">
+        <tr class="menuData">
+          <td>
+            <p> <ons-button class="home-button" id="GotoRegis">Register</ons-button> </p>
+          </td>
+        </tr>
+
+        <tr class="menuData">
+          <td>
+            <p> <ons-button class="home-button" id="GotoLogin">Login</ons-button> </p>
+          </td>
+        </tr>
+
         <tr class="menuData">
           <td>
             <p> <ons-button class="home-button" id="GotoQuizMS">Mood Survey</ons-button> </p>
@@ -72,11 +82,55 @@
         </tr>
       </table>
 
-      <!-- <p> <ons-button class="home-button-bottom" id="GotoAbout">About</ons-button> </p> -->
+      <p> <ons-button class="home-button-bottom" id="GotoAbout">About</ons-button> </p>
 
     </center>
 
   </div>
+  </ons-page>
+</template>
+
+<template id="register.html"> <!-- **************REGISTER PAGE*************** -->
+  <ons-page id="register">
+    <div class="pageSetup">
+
+    <ons-back-button class="backButton">Exit</ons-back-button>
+
+      <center>
+        <div class="pageTitleLarge"> <h5>Register Page</h5> </div>
+
+        <!-- ID & password login input -->
+        <div class="registerBoxExtraLarge ">
+          <table>
+            <tr>
+              <td> <p>Name</p> </td>
+              <td>
+                <input class="textboxEffect" class="item" id="realname" type="textbox"
+                name="nameofuser" onblur="verify('nameofuser', this.value, 'checkuname', 'correctuname')"
+                placeholder="nick/full name" >
+                </input> <span id="correctuname"></span>
+                <div class="errorfont" id="checkuname"></div>
+              </td>
+            </tr>
+          <br />
+            <tr>
+              <td> <p>Email</p> </td> <td> <input class="textboxEffect" class="item" type="text" ></input> </td>
+            </tr>
+          <br / />
+            <tr>
+              <td> <p>Username</p> </td> <td> <input class="textboxEffect" class="item" type="text" ></input> </td>
+            </tr>
+          <br />
+            <tr>
+              <td> <p>Password</p> </td> <td> <input class="textboxEffect" class="item" type="password" ></input> </td>
+            </tr>
+          </table>
+        </div>
+
+    <p> <ons-button class="NextQuizButton" id="BackToMenu">Submit</ons-button> </p>
+  </center>
+
+    </div>
   </ons-page>
 </template>
 
@@ -102,7 +156,7 @@
           </table>
         </div>
 
-    <p> <ons-back-button class="NextQuizButton">Login</ons-back-button> </p>
+    <p> <ons-button class="NextQuizButton" id="BackToMenu">Login</ons-button> </p>
   </center>
 
     </div>

@@ -153,6 +153,7 @@
 
 .item {
   width: 50%;
+  padding: 3px 0 3px 5px;
   display: block;
   margin: auto;
   align-items: center;
@@ -318,7 +319,7 @@
 }
 
 .textboxEffect {
-    padding: 6px 10px;
+    padding: 7px 5px 0 2px;
     border: 3px solid #008ae6;
     border-radius: 10px;
     -webkit-transition: 0.5s;
@@ -332,13 +333,20 @@
 }
 
 .menuTable {
-  border: 1px solid black;
-  border-collapse: separate;
-  border-spacing: 50px;
+  border-spacing: 10px;
 }
 
-.meduData {
-  padding: 25px;
+.registerBoxExtraLarge {
+  background-color: white;
+  height: 300px;
+  width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 10px 0 0 0;
+  position: relative;
+  border-radius: 5px;
 }
 
-.menuData:hover{background-color:grey}
+.errorfont {
+  color: red;
+  font-size: 75%;
+}
