@@ -55,14 +55,16 @@ var GameData =  [
   }
 ]
 
+/* function to verify all the input data from user and immediate give user info
+    what user mistake by check if corret and error prompt if wrong */
 function verify(inputtype, inputvalue, displaymsg, correctmsg)
 {
   console.log(inputtype, inputvalue, displaymsg);
 
   if (inputvalue.length == 0)
    {
-     document.getElementById(displaymsg).innerHTML="*must be filled";
-     document.getElementById(correctmsg).innerHTML= "";
+     document.getElementById(displaymsg).innerHTML = "*must be filled";
+     document.getElementById(correctmsg).innerHTML = "";
    }
    else
    {
@@ -71,16 +73,45 @@ function verify(inputtype, inputvalue, displaymsg, correctmsg)
    }
 }
 
+/* function to validate the user data if there no any info have been inputted and submit then
+    it will alert user too fill the blank space*/
+
 var pass = false;
 
 function validatereg()
 {
 
   var nameofuser = document.getElementById("realname");
-  console.log(nameofuser);
+  var mailofuser = document.getElementById("usermail");
+  var usernameofuser = document.getElementById("useruname");
+  var passofuser = document.getElementById("upass");
 
   if (nameofuser.value == ""){
     alert("don't leave name blank");
+    pass = false;
+  }
+  else{
+    pass = true;
+  }
+
+  if (mailofuser.value == ""){
+    alert("don't leave e-mail blank");
+    pass = false;
+  }
+  else{
+    pass = true;
+  }
+
+  if (usernameofuser.value == ""){
+    alert("don't leave username blank");
+    pass = false;
+  }
+  else{
+    pass = true;
+  }
+
+  if (passofuser.value == ""){
+    alert("don't leave password blank");
     pass = false;
   }
   else{

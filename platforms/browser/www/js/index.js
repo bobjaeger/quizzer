@@ -55,14 +55,16 @@ var GameData =  [
   }
 ]
 
+/* function to verify all the input data from user and immediate give user info
+    what user mistake by check if corret and error prompt if wrong */
 function verify(inputtype, inputvalue, displaymsg, correctmsg)
 {
   console.log(inputtype, inputvalue, displaymsg);
 
   if (inputvalue.length == 0)
    {
-     document.getElementById(displaymsg).innerHTML="*must be filled";
-     document.getElementById(correctmsg).innerHTML= "";
+     document.getElementById(displaymsg).innerHTML = "*must be filled";
+     document.getElementById(correctmsg).innerHTML = "";
    }
    else
    {
@@ -71,21 +73,76 @@ function verify(inputtype, inputvalue, displaymsg, correctmsg)
    }
 }
 
-var pass = false;
+/* function to validate the user data if there no any info have been inputted and submit then
+    it will alert user too fill the blank space*/
+
+// #############VALIDATE REGISTER PAGE
+
+var passREG = false;
 
 function validatereg()
 {
+  var nameofuser = document.getElementById("realname").value;
+  var mailofuser = document.getElementById("usermail").value;
+  var usernameofuser = document.getElementById("useruname").value;
+  var passofuser = document.getElementById("upass").value;
 
-  var nameofuser = document.getElementById("realname");
-  console.log(nameofuser);
-
-  if (nameofuser.value == ""){
+  if (nameofuser == ""){
     alert("don't leave name blank");
-    pass = false;
+    passREG = false;
   }
+  else if (mailofuser == ""){
+    alert("don't leave e-mail blank");
+    passREG = false;
+  }
+  else if (usernameofuser == ""){
+    alert("don't leave username blank");
+    passREG = false;
+  }
+  else if (passofuser == ""){
+    alert("don't leave password blank");
+    passREG = false;
+  }
+
   else{
-    pass = true;
+    saveuser(nameofuser, mailofuser, usernameofuser, passofuser)
+    passREG = true;
   }
+}
+
+/* function to validate the user data if there no any info have been inputted and submit then
+    it will alert user too fill the blank space*/
+
+// #############VALIDATE LOGIN PAGE
+
+var passLOG = false;
+
+function validatelog()
+{
+  var usernamelog = document.getElementById("ulogin").value;
+  var passlog = document.getElementById("ulogpass").value;
+
+  if (usernamelog == ""){
+    alert("don't leave username blank");
+    passLOG = false;
+  }
+  else if (passlog == ""){
+    alert("don't leave password blank");
+    passLOG = false;
+  }
+
+  else{
+    passLOG = true;
+  }
+}
+
+function saveuser(nameofuser, mailofuser, usernameofuser, passofuser) {
+  var link = "http://introtoapps.com/datastore.php?action=save&appid=215339949&objectid=";
+  var linkname = nameofuser;
+  var linkcombine = link + linkname + "&data=" + "name:" + nameofuser + ", " + "email:" + mailofuser + ", " + "username:" + usernameofuser + ", " + "password:" + passofuser;
+  //console.log(linkcombine);
+  $.post(linkcombine, function (data, status){alert("Successfuly registered!");
+});
 }
 
 // NAVIGATION
@@ -120,7 +177,7 @@ document.addEventListener('init', function(event) {
   {
     page.querySelector('#BackToMenu').onclick = function() {
       validatereg();
-      if(pass != false){
+      if(passREG != false){
         document.querySelector('#NAV').popPage(register.html);
       }
     };
@@ -128,9 +185,11 @@ document.addEventListener('init', function(event) {
 
   else if (page.id === 'login')
   {
-
     page.querySelector('#BackToMenu').onclick = function() {
-      document.querySelector('#NAV').pushPage('menuP.html');
+      validatelog();
+      if(passLOG != false){
+        document.querySelector('#NAV').popPage(login.html);
+      }
     };
   }
 

@@ -31,6 +31,7 @@
 
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/index.css">
 
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -102,27 +103,42 @@
         <!-- ID & password login input -->
         <div class="registerBoxExtraLarge ">
           <table>
-            <tr>
+            <tr class="rowdesign">
               <td> <p>Name</p> </td>
               <td>
                 <input class="textboxEffect" class="item" id="realname" type="textbox"
-                name="nameofuser" onblur="verify('nameofuser', this.value, 'checkuname', 'correctuname')"
+                name="nameofuser" onblur="verify('nameofuser', this.value, 'checkrealname', 'correctrealname')"
                 placeholder="nick/full name" >
-                </input> <span id="correctuname"></span>
-                <div class="errorfont" id="checkuname"></div>
+              </input> <span id="correctrealname"></span>
+                <div class="errorfont" id="checkrealname"></div>
               </td>
             </tr>
           <br />
-            <tr>
-              <td> <p>Email</p> </td> <td> <input class="textboxEffect" class="item" type="text" ></input> </td>
+            <tr class="rowdesign">
+              <td> <p>Email</p> </td> <td> <input class="textboxEffect" class="item" id="usermail" type="textbox"
+              name="mailofuser" onblur="verify('mailofuser', this.value, 'checkumail', 'correctumail')"
+              placeholder="example@quizzer.com" > <span id="correctumail"></span>
+              <div class="errorfont" id="checkumail"></div>
+              </input>
+              </td>
             </tr>
           <br / />
-            <tr>
-              <td> <p>Username</p> </td> <td> <input class="textboxEffect" class="item" type="text" ></input> </td>
+            <tr class="rowdesign">
+              <td> <p>Username</p> </td> <td> <input <input class="textboxEffect" class="item" id="useruname" type="textbox"
+              name="usernameofuser" onblur="verify('usernameofuser', this.value, 'checkuname', 'correctuname')"
+              placeholder="quizzer" > <span id="correctuname"></span>
+              <div class="errorfont" id="checkuname"></div>
+              </input>
+              </td>
             </tr>
           <br />
-            <tr>
-              <td> <p>Password</p> </td> <td> <input class="textboxEffect" class="item" type="password" ></input> </td>
+            <tr class="rowdesign">
+              <td> <p>Password</p> </td> <td> <input <input class="textboxEffect" class="item" id="upass" type="password"
+              name="passofuser" onblur="verify('passofuser', this.value, 'checkpass', 'correctpass')"
+              placeholder="6-12 strong password" > <span id="correctpass"></span>
+              <div class="errorfont" id="checkpass"></div>
+              </input>
+              </td>
             </tr>
           </table>
         </div>
@@ -147,11 +163,19 @@
         <div class="questionBoxLarge">
           <table>
             <tr>
-              <td> <p>Username</p> </td> <td> <input class="textboxEffect" type="text" class="item"></input> </td>
+              <td> <p>Username</p> </td> <td> <input class="textboxEffect" type="textbox" class="item" id="ulogin" placeholder="quizzer"
+                name="usernamelog" onblur="verify('usernamelog', this.value, 'checkulog', 'correctulog')">
+              </input> <span id="correctulog"></span>
+                <div class="errorfont" id="checkulog"></div>
+              </td>
             </tr>
           <br />
             <tr>
-              <td> <p>Password</p> </td> <td> <input class="textboxEffect" type="password" class="item"></input> </td>
+              <td> <p>Password</p> </td> <td> <input class="textboxEffect" type="password" class="item" id="ulogpass" placeholder="6-12 lenght"
+                name="passlog" onblur="verify('passlog', this.value, 'checkpasslog', 'correctpasslog')">
+              </input> <span id="correctpasslog"></span>
+                <div class="errorfont" id="checkpasslog"></div>
+              </td>
             </tr>
           </table>
         </div>

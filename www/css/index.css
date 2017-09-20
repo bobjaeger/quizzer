@@ -338,8 +338,8 @@
 
 .registerBoxExtraLarge {
   background-color: white;
-  height: 300px;
-  width: 300px;
+  height: 325px;
+  width: 325px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 10px 0 0 0;
   position: relative;
@@ -349,4 +349,8 @@
 .errorfont {
   color: red;
   font-size: 75%;
+}
+
+.rowdesign {
+  padding: 5px 3px 5px 0;
 }
