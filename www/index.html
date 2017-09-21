@@ -30,6 +30,7 @@
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 
   <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/sha256.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -53,9 +54,9 @@
     <center>
       <img class="logo" src="img/quizzer_logo.png" alt="Quizzer" style="width:180px;height:180px;">
 
-      <div class="welcome">
+      <!-- <div class="welcome" id="userLogTitle">
       Welcome Guest :)
-      </div>
+      </div> -->
 
       <table class="menuTable">
         <tr class="menuData">
@@ -144,6 +145,7 @@
         </div>
 
     <p> <ons-button class="NextQuizButton" id="BackToMenu">Submit</ons-button> </p>
+    <ons-button tappable onclick="ons.notification.toast({message: 'Enjoy Onsen UI', timeout: 2000})">Toast</ons-button>
   </center>
 
     </div>
@@ -180,7 +182,8 @@
           </table>
         </div>
 
-    <p> <ons-button class="NextQuizButton" id="BackToMenu">Login</ons-button> </p>
+    <p> <ons-button class="NextQuizButtonwopad" id="BackToMenu">Login</ons-button> </p>
+    <p> <ons-button class="NextQuizButton" id="BackToMenu" onclick="CleanDataUserLogout()">Logout</ons-button> </p>
   </center>
 
     </div>
