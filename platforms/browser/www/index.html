@@ -82,6 +82,12 @@
             <p> <ons-button class="home-button" id="GotoQuizEG">Exam Grade</ons-button> </p>
           </td>
         </tr>
+
+        <tr class="menuData">
+          <td>
+            <p> <ons-button class="home-button" id="GotoScore">Score</ons-button> </p>
+          </td>
+        </tr>
       </table>
 
       <p> <ons-button class="home-button-bottom" id="GotoAbout">About</ons-button> </p>
@@ -197,12 +203,13 @@
     <!-- start content for Quiz mood survey ----------------------------------->
     <center>
       <div id="Q1-0-title" class="pageTitle"></div>
+
       <!-- question mood survey 1. Date -->
         <div class="questionBox">
           <div id="Q1-0-Question0" class="text"></div>
           <div id="Q1-0-Help0" class="textHelp"></div>
         <br />
-          <input class="textboxEffect" id="Q1-0-date" type="text" class="item"></input>
+          <input class="textboxEffect" id="Q1-0-date" type="textbox" class="item">  </input>
         </div>
 
     <br />
@@ -212,7 +219,8 @@
           <div id="Q1-0-Question1" class="text"></div>
           <div id="Q1-0-Help1" class="textHelp"></div>
         <br />
-          <input class="textboxEffect" id="Q1-0-name" type="text" size="30" class="item"></input>
+          <input class="textboxEffect" id="Q1-0-name" type="textbox" class="item" name="yourname" onblur="getInputBoxMS()">
+          </input>
         </div>
 
     <br />
@@ -222,7 +230,8 @@
           <div id="Q1-0-Question2" class="text"></div>
           <div id="Q1-0-Help2" class="textHelp"></div>
         <br />
-          <textarea class="textboxEffect" id="Q1-0-diary" type="textarea" class="itemTextArea" rows="5" cols="35"></textarea>
+          <textarea class="textboxEffect" id="Q1-0-diary" type="textarea" class="itemTextArea" rows="5" cols="35" name="udiary" onblur="getInputBoxMS()">
+          </textarea> </input>
         </div>
 
     <br />
@@ -234,13 +243,13 @@
         <br />
         <table>
           <tr>
-            <td> <input class="itemRadio" type="radio" name="gender" value="male"> </td>  <td id="Q1-0-genderMale"></td>
+            <td> <input class="itemRadio" type="radio" name="gender" value="male" onchange="getRadioButton()"> </td>  <td id="Q1-0-genderMale"></td>
           </tr>
           <tr>
-            <td> <input class="itemRadio" type="radio" name="gender" value="female"> </td>  <td id="Q1-0-genderFemale"></td>
+            <td> <input class="itemRadio" type="radio" name="gender" value="female" onchange="getRadioButton()"> </td>  <td id="Q1-0-genderFemale"></td>
           </tr>
           <tr>
-            <td> <input class="itemRadio" type="radio" name="gender" value="other"> </td>  <td id="Q1-0-genderOther"></td>
+            <td> <input class="itemRadio" type="radio" name="gender" value="other" onchange="getRadioButton()"> </td>  <td id="Q1-0-genderOther"></td>
           </tr>
         </table>
         </div>
@@ -295,7 +304,7 @@
         <div class="questionBox">
           <div id="Q2-1-Question1" class="text"></div>
         <br />
-          <input class="textboxEffect" id="Q2-1-SID" type="text" class="item"></input>
+          <input class="textboxEffect" id="Q2-1-SID" type="text" class="item" onblur="getInputBoxEG()"></input>
         </div>
 
     <br />
@@ -304,7 +313,7 @@
         <div class="questionBox">
           <div id="Q2-1-Question2" class="text"></div>
         <br />
-          <input class="textboxEffect" id="Q2-1-fullname" type="text" class="item"></input>
+          <input class="textboxEffect" id="Q2-1-fullname" type="text" class="item" onblur="getInputBoxEG()"></input>
         </div>
 
     <!-- button GotoNext Exam Grade page 2 4 question -->
@@ -328,7 +337,7 @@
         <div class="questionBox">
           <div id="Q2-1-Question3" class="text"></div>
         <br />
-          <input class="textboxEffect" id="Q2-1-capital" type="text" class="item"></input>
+          <input class="textboxEffect" id="Q2-1-capital" type="text" class="item" onblur="getInputBoxEG2()"></input>
           <div id="Q2-1-point3" class="text"></div>
         </div>
 
@@ -338,7 +347,7 @@
         <div class="questionBox">
           <div id="Q2-1-Question4" class="text"></div>
         <br />
-          <input class="textboxEffect" id="Q2-1-state" type="text" class="item"></input>
+          <input class="textboxEffect" id="Q2-1-state" type="text" class="item" onblur="getInputBoxEG2()"></input>
           <div id="Q2-1-point4" class="text"></div>
         </div>
 
@@ -401,6 +410,22 @@
   </ons-page>
 </template>
 
+<template id="score.html"> <!-- **************SCORE PAGE*************** -->
+  <ons-page id="score">
+    <div class="pageSetup">
+
+    <ons-back-button class="backButton">Exit</ons-back-button>
+
+    <center>
+    <div  class="questionBoxExtraXLarge">
+
+    </div>
+    </center>
+
+    </div>
+  </ons-page>
+</template>
+
 <template id="about.html"> <!-- **************ABOUT PAGE*************** -->
   <ons-page id="about">
     <div class="pageSetup">
@@ -419,7 +444,7 @@
       This app is still under maintenance so every error or bad experience can be reported to my
       email brputra@deakin.edu.au. Let me know ;).</p> <br />
     <p>
-      --- Quizzer App Project 1 SIT313 Mobile Computing---</p>
+      --- Quizzer App Project SIT313 Mobile Computing---</p>
 
     </div>
     </center>

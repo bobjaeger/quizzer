@@ -55,7 +55,7 @@
 //   }
 // ]
 
-var GameData='http://introtoapps.com/datastore.php?action=save&appid=215339949&objectid=quiz&data=[{"id": "quiz01","title": "Mood Survey","questions": [{"id": 1, "text": "Date", "type": "date", "help": "The date you started this quiz."},{"id": 2, "text": "Name", "type": "textbox", "help": "Your full name"},{"id": 3, "text": "Diary", "type": "textarea", "help": "Write 4 paragraphs"},{"id": 4, "text": "Gender", "type": "choice", "options": ["Male", "Female", "Depends what day it is"]},{"id": 5, "text": "Mood", "type": "slidingoption", "options": ["Sad", "Happy", "Laughing"], "optionVisuals": ["ðŸ˜­","â˜ºï¸","ðŸ˜†"]},{"id": 6, "text": "Happiness Today", "type": "scale", "start": 0, "end": 10, "increment": 1, "gradientStart": "rgb(255,0,0)", "gradientEnd": "rgb(0,255,0)"},{"id": 7, "text": "Blood Alcohol", "type": "scale", "start": 0, "end": 0.5, "increment": 0.01}]},{"id": "quiz02","title": "Exam Grade","questionsPerPage": [2,4],"score": 20,"questions": [{"id": 1, "text": "Sid", "type": "textbox", "validate": "/[0-9]+/"},{"id": 2, "text": "Name", "type": "textbox", "help": "Your full name"},{"id": 3, "text": "What is the capital of Australia?", "type": "textbox", "answer": "Canberra", "weighting": 5},{"id": 4, "text": "What is the largest state in Australia?", "type": "textbox", "answer": ["Western Australia", "WA"], "weighting": 5},{"id": 5, "text": "What is the capital of Victoria?", "type": "choice", "options": ["Sydney", "Brisbane", "Melbourne"], "answer": "Melbourne", "weighting": 5},{"id": 6, "text": "Which are the territories of Australia?", "type": "multiplechoice", "options": ["ACT","NSW","NT","QLD","SA","TAS","VIC","WA"], "answer": ["ACT","NT"], "weighting": 5}]}]';
+var GameData='http://introtoapps.com/datastore.php?action=save&appid=215339949&objectid=quiz&data=[{"id": "quiz01","title": "Mood Survey","questions": [{"id": 1, "text": "Date", "type": "date", "help": "The date you started this quiz."},{"id": 2, "text": "Name", "type": "textbox", "help": "Your full name"},{"id": 3, "text": "Diary", "type": "textarea", "help": "Write 4 paragraphs"},{"id": 4, "text": "Gender", "type": "choice", "options": ["Male", "Female", "Depends what day it is"]},{"id": 5, "text": "Mood", "type": "slidingoption", "options": ["Sad", "Happy", "Laughing"], "optionVisuals": ["~(^-^)~","-(-_-)-","=(v_v)="]},{"id": 6, "text": "Happiness Today", "type": "scale", "start": 0, "end": 10, "increment": 1, "gradientStart": "rgb(255,0,0)", "gradientEnd": "rgb(0,255,0)"},{"id": 7, "text": "Blood Alcohol", "type": "scale", "start": 0, "end": 0.5, "increment": 0.01}]},{"id": "quiz02","title": "Exam Grade","questionsPerPage": [2,4],"score": 20,"questions": [{"id": 1, "text": "Sid", "type": "textbox", "validate": "/[0-9]+/"},{"id": 2, "text": "Name", "type": "textbox", "help": "Your full name"},{"id": 3, "text": "What is the capital of Australia?", "type": "textbox", "answer": "Canberra", "weighting": 5},{"id": 4, "text": "What is the largest state in Australia?", "type": "textbox", "answer": ["Western Australia", "WA"], "weighting": 5},{"id": 5, "text": "What is the capital of Victoria?", "type": "choice", "options": ["Sydney", "Brisbane", "Melbourne"], "answer": "Melbourne", "weighting": 5},{"id": 6, "text": "Which are the territories of Australia?", "type": "multiplechoice", "options": ["ACT","NSW","NT","QLD","SA","TAS","VIC","WA"], "answer": ["ACT","NT"], "weighting": 5}]}]';
 
 $.get(GameData, function (data, status){
 });
@@ -73,7 +73,7 @@ $.get(GameData, function (data, status){
 
 /* function to verify all the input data from user and immediate give user info
     what user mistake by check if corret and error prompt if wrong */
-function verify(inputtype, inputvalue, displaymsg, correctmsg)
+function verify(inputtype, inputvalue, displaymsg, correctmsg)  // @VERIFY REGISTER
 {
   console.log(inputtype, inputvalue, displaymsg);
 
@@ -145,11 +145,11 @@ function verify(inputtype, inputvalue, displaymsg, correctmsg)
     }
   }
 }
+// @END OF VERIFY REGISTER
 
 /* function to validate the user data if there no any info have been inputted and submit then
     it will alert user too fill the blank space*/
-// #############VALIDATE REGISTER PAGE
-function validatereg()
+function validatereg() // @VALIDATE REGISTER IF BLANK OR NOT
 {
     var passREG = true;
 
@@ -196,13 +196,14 @@ function validatereg()
       }
     }
   }
+// @END OF VALIDATE REGISTER
 
 /* function to validate the user data if there no any info have been inputted and submit then
     it will alert user too fill the blank space*/
-// #############VALIDATE LOGIN PAGE
+
 var passLOG = false;
 
-function validatelog(){
+function validatelog(){ // @VALIDATE LOGIN IF THERE BLANK OR NOT
   var usernamelog = document.getElementById("ulogin").value;
   var passlog = document.getElementById("ulogpass").value;
 
@@ -219,25 +220,27 @@ function validatelog(){
     passLOG = true;
   }
 }
+// @END OF VALIDATE LOGIN
 
 // register user and save all the data to cloud
-function reguser(nameofuser, mailofuser, usernameofuser, passofuser) {
+function reguser(nameofuser, mailofuser, usernameofuser, passofuser) { // @SAVE USER REGISTER DATA TO CLOUD
 
-  var encryptPass = sha256(passofuser);
+  var encryptPass = sha256(passofuser); // SHA VAR
 
   var link = "http://introtoapps.com/datastore.php?action=save&appid=215339949&objectid=";
   var linkname = usernameofuser;
-  var linkcombine = link + linkname + "&data=" + "name:" + nameofuser + "," + "email:" + mailofuser + "," + "username:" + usernameofuser + "," + "password:" + encryptPass;
+  var linkcombine = link + linkname + "&data=" + "name:" + nameofuser + "," + "email:" + mailofuser + "," + "username:" + usernameofuser + "," + "password:" + encryptPass; //SHA VAR CALLED
   $.get(linkcombine, function (data, status){alert("Successfuly registered!");
 });
 }
+// @END OF SAVE REGISTER DATA TO CLOUD
 
-// login user and retrieve quiz data per user
-function loguser(usernameofuser, passofuser) {
+// login user and retrieve quiz data per user by split comma to take other data
+function loguser(usernameofuser, passofuser) { // @LOGIN USER AND RETRIEVE USER DETAILS
   var link = "http://introtoapps.com/datastore.php?action=load&appid=215339949&objectid=";
   var linkname = usernameofuser;
   var linkcombine = link + linkname;
-  $.get(linkcombine, function (data, status){alert(data)
+  $.get(linkcombine, function (data, status){
 
   var retrievedData = data;
   var keywords = retrievedData.split(',');
@@ -246,33 +249,111 @@ function loguser(usernameofuser, passofuser) {
     keywords = entry.split(':');
 
     if(keywords[0] == "password"){
-      alert('password');
-      console.log(keywords[1] + ", " + passofuser);
 
       var encryptPass = sha256(passofuser);
 
-      console.log(keywords[1]);
-      console.log(encryptPass);
       if(keywords[1] == encryptPass){
-        alert('success');
+        alert('you have been logged in');
 
+        //immediately store username and hashed pass of user to local storage
         localStorage.setItem("usernameLOC", usernameofuser);
         localStorage.setItem("passwordLOC", encryptPass);
       }
       else{
-        alert('fails');
+        alert('failed log in please try again');
       }
-    }
-    console.log(keywords);
+     }
     });
   });
 }
+// @END OF RETRIEVING USER DATA TO LOGIN
 
-// function to clear local storage if the logged in user logout
-function CleanDataUserLogout(){
+// function to clear local storage if the logged in user logout and change local data to guest
+function CleanDataUserLogout(){  // @CLEAR USER DATA AT LOCAL STORAGE WHEN LOGGED OUT
   localStorage.setItem("usernameLOC", "guest");
   localStorage.removeItem("passwordLOC");
-  alert("logout");
+  alert("you heve been logout");
+}
+
+//save all inputted data relate to logged user before upload to cloud
+function getInputBoxMS(){
+  //ms var
+  var name = document.getElementById("Q1-0-name").value;
+  var diary = document.getElementById("Q1-0-diary").value;
+
+  //local mood survey quiz
+  localStorage.setItem("MSname", name);
+  localStorage.setItem("MSdiary", diary);
+
+}
+
+function getInputBoxEG(){
+  //eg var
+  var sid = document.getElementById("Q2-1-SID").value;
+  var fullname = document.getElementById("Q2-1-fullname").value;
+
+  //local exam grade user details
+  localStorage.setItem("EGsid", sid);
+  localStorage.setItem("EGfullname", fullname);
+}
+
+function getInputBoxEG2(){
+  //eg2 var
+  var capital = document.getElementById("Q2-1-capital").value;
+  var state = document.getElementById("Q2-1-state").value;
+
+  //local exam grade answered quiz
+  localStorage.setItem("EG2capital", capital);
+  localStorage.setItem("EG2state", state);
+}
+
+//save all inputted data exclusively for radio button relate to logged user before upload to cloud
+function getRadioButton(){
+  var radios = document.getElementsByName("seconds");
+  $('input[name="gender"]').on('change', function(){
+    localStorage.setItem('gender', $(this).val());
+  });
+}
+
+//save all data to cloud that already saved in local but this function just for Mood Survey quiz
+function MSsave() { // @SAVE Mood Survey to cloud
+
+  var usernameLOC = localStorage.getItem("usernameLOC");
+
+  var name = document.getElementById("Q1-0-name").value;
+  var diary = document.getElementById("Q1-0-diary").value;
+
+  var link = "http://introtoapps.com/datastore.php?action=append&appid=215339949&objectid=";
+  var linkcombine = link + usernameLOC + "&data=" + "," + name + "," + diary;
+  $.get(linkcombine, function (data, status){alert("MoodSurvey Quiz Submitted");
+});
+}
+
+function EGsave() { // @SAVE Exam Grade user data to cloud
+
+  var usernameLOC = localStorage.getItem("usernameLOC");
+
+  var egsid = document.getElementById("Q2-1-SID").value;
+  var egfullname = document.getElementById("Q2-1-fullname").value;
+
+  var link = "http://introtoapps.com/datastore.php?action=append&appid=215339949&objectid=";
+  var linkcombine = link + usernameLOC + "&data=" + "," + egsid + "," + egfullname ;
+  $.get(linkcombine, function (data, status){alert("ExamGrade user data submitted");
+});
+}
+
+function EGsave2() { // @SAVE Exam Grade answer to cloud
+
+  var usernameLOC = localStorage.getItem("usernameLOC");
+
+  var eg2capital = document.getElementById("Q2-1-capital").value;
+  var eg2state = document.getElementById("Q2-1-state").value;
+
+  var link = "http://introtoapps.com/datastore.php?action=append&appid=215339949&objectid=";
+  var linkcombine = link + usernameLOC + "&data=" + "," + eg2capital + "," + eg2state;
+  $.get(linkcombine, function (data, status){alert("ExamGrade answer submitted");
+  window.location.reload();
+});
 }
 
 // NAVIGATION
@@ -296,6 +377,10 @@ document.addEventListener('init', function(event) {
 
     page.querySelector('#GotoQuizEG').onclick = function() {
       document.querySelector('#NAV').pushPage('EGQuiz.html');
+    };
+
+    page.querySelector('#GotoScore').onclick = function() {
+      document.querySelector('#NAV').pushPage('score.html');
     };
 
     page.querySelector('#GotoAbout').onclick = function() {
@@ -328,6 +413,7 @@ document.addEventListener('init', function(event) {
   else if (page.id === 'MSQuiz')
   {
     page.querySelector('#BackToMenu').onclick = function() {
+      MSsave();
       document.querySelector('#NAV').popPage(MSQuiz.html);
     };
 
@@ -376,6 +462,7 @@ document.addEventListener('init', function(event) {
   else if (page.id === 'EGQuiz')
   {
     page.querySelector('#NextQuizEG2').onclick = function() {
+      EGsave()
       document.querySelector('#NAV').pushPage('EGQuiz2.html');
     };
 
@@ -400,7 +487,8 @@ document.addEventListener('init', function(event) {
   else if (page.id === 'EGQuiz2')
   {
     page.querySelector('#BackToMenu').onclick = function() {
-      window.location.reload();
+      EGsave2()
+      //window.location.reload();
       //document.querySelector('#NAV').popPage(EGQuiz2.html);
     };
 
@@ -442,6 +530,11 @@ document.addEventListener('init', function(event) {
     document.getElementById("Q2-1-point6").innerHTML = '*score: ' + getDataInQuiz[1].questions[5].weighting;
   });
 }
+
+  else if (page.id === 'score')
+  {
+
+  }
 
   else if (page.id === 'about')
   {

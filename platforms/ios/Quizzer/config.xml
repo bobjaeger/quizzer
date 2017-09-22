@@ -30,6 +30,15 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <splash height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
+    <splash height="1536" src="res/screen/ios/screen-ipad-landscape-2x.png" width="2048" />
+    <splash height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768" />
+    <splash height="2048" src="res/screen/ios/screen-ipad-portrait-2x.png" width="1536" />
+    <splash height="320" src="res/screen/ios/screen-iphone-landscape.png" width="480" />
+    <splash height="640" src="res/screen/ios/screen-iphone-landscape-2x.png" width="960" />
+    <splash height="480" src="res/screen/ios/screen-iphone-portrait.png" width="320" />
+    <splash height="960" src="res/screen/ios/screen-iphone-portrait-2x.png" width="640" />
+    <splash height="1136" src="res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <preference name="AllowInlineMediaPlayback" value="false" />

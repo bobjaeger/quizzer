@@ -1,0 +1,21 @@
+image created by bobby using adobe ilustrator and adobe photoshop
+
+list of image stored in /quizzer/www/img/(images and AI,PS file here):
+bg_quizzer.ai
+bg_quizzer.png
+default_splash_screen.png
+logo.png(given default by cordova)
+quizzer_logo.ai
+quizzer_logo.png
+quizzer_logo_hd.png
+
+list of image stored in /quizzer/res/screen/ios/(all splash screen images here):
+screen-ipad-landscape.png
+screen-ipad-landscape-2x.png
+screen-ipad-portrait.png
+screen-ipad-portrait-2x.png
+screen-iphone-landscape.png
+screen-iphone-landscape-2x.png
+screen-iphone-portrait.png
+screen-iphone-portrait-2x.png
+screen-iphone-portrait-568h-2x.png
